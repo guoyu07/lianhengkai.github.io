@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>NoSQL数据库之MongoDB | Lian HengKai&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="NoSQL数据库之MongoDB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NoSQL数据库之MongoDB">
+<meta property="og:url" content="http://yoursite.com/2015/09/02/NoSQL数据库之MongoDB/index.html">
+<meta property="og:site_name" content="Lian HengKai's Blog">
+<meta property="og:description" content="NoSQL数据库之MongoDB">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb01.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb02.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb03.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb04.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb05.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb06.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb07.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb08.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb09.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb10.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb11.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb12.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb13.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb14.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb15.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb16.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb17.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb18.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb19.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb20.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb21.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb22.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb23.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb24.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb25.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb26.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb27.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb28.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb29.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_mongodb30.png">
+<meta property="og:updated_time" content="2015-11-24T03:38:31.112Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NoSQL数据库之MongoDB">
+<meta name="twitter:description" content="NoSQL数据库之MongoDB">
+  
+    <link rel="alternative" href="/atom.xml" title="Lian HengKai&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Lian HengKai</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/应用">应用</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/lianhengkai" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 16.67px;">MySQL</a> <a href="/tags/PDO/" style="font-size: 10px;">PDO</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Smarty/" style="font-size: 11.67px;">Smarty</a> <a href="/tags/Sphinx/" style="font-size: 10px;">Sphinx</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/jQuery/" style="font-size: 13.33px;">jQuery</a> <a href="/tags/应用/" style="font-size: 18.33px;">应用</a> <a href="/tags/电脑/" style="font-size: 10px;">电脑</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Lian HengKai</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Lian HengKai</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/应用">应用</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/lianhengkai" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-NoSQL数据库之MongoDB" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/02/NoSQL数据库之MongoDB/" class="article-date">
+  	<time datetime="2015-09-02T02:52:23.000Z" itemprop="datePublished">2015-09-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      NoSQL数据库之MongoDB
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/MongoDB/">MongoDB</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="MongoDB_的简介">MongoDB 的简介</h2><h3 id="基本简介">基本简介</h3><p>MongoDB 是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的，语法有点类似 javascript 面向对象的查询语言，它是一个面向集合的，模式自由的文档型数据库。</p>
+<p>它的特点是高性能、易部署、易使用，存储数据非常方便。</p>
+<ol>
+<li>主要目标：高的性能，扩展强（分布式存储）</li>
+<li>面向文档的数据库</li>
+<li>无模式（无须建表、也无须建数据库）</li>
+<li>以 bson 格式存储数据</li>
+<li>javascript 作为操作语言</li>
+<li>支持多种语言：php 、python 、java 、c++ 等</li>
+<li>支持 GridFs (大文件存储)</li>
+</ol>
+<a id="more"></a>
+<h3 id="MongoDB_与_MySQL_性能比较">MongoDB 与 MySQL 性能比较</h3><p>分别插入 100 万条记录，并对其做 100 个用户并发查询操作</p>
+<p><img src="/images/201509/lhk_mongodb01.png" alt=""></p>
+<h3 id="应用范围和限制">应用范围和限制</h3><p>不支持连表查询，不支持 sql 语句，不支持事务存储过程等，所以不适合存储数据间关系比较复杂的数据，一般主要是当做一个数据仓库来使用。</p>
+<p>适用于：日志系统、股票数据等。</p>
+<h2 id="了解几个概念">了解几个概念</h2><h3 id="文档">文档</h3><p>MongoDB 数据存储是以文档为单位的，文档就类似于关系型数据库里面的行。<br>多个键值对有序地放置在一起便是文档。<br>{键1:值1, 键2:值2, ………}<br>{name:xiaogang, age:12, email:xiaogang@sohu.com}<br>bson 格式：json 格式的扩展，支持的值的类型更加丰富。</p>
+<p>MongoDB 中以文档的方式存取记录，如一条记录格式如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"username"</span>:<span class="string">"Tom"</span>, <span class="string">"age"</span>:<span class="number">10</span> &#125;</span><br><span class="line">&#123;<span class="string">"username"</span>:<span class="string">"Tom"</span> , <span class="string">"age"</span>:<span class="string">"10"</span>&#125; </span><br><span class="line">&#123;<span class="string">"Username"</span>:<span class="string">"Tom"</span>, <span class="string">"age"</span>:<span class="number">10</span>&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：<br>（1）以上是两个不同的文档，MongoDB 区分大小写的数据类型，第一个 age 字段是数字类型，第二个 age 是字符串类型。<br>（2）每一个文档尺寸不能超过 16 M</p>
+</blockquote>
+<h3 id="集合">集合</h3><p>集合就类似于关系型数据里面的表，多个文档形成一个集合。<br>在一个集合里面可以有不同格式的文档。<br>比如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;name:xiaogang&#125;</span><br><span class="line">&#123;name:xiaofeng, age:<span class="number">12</span>&#125;</span><br><span class="line">&#123;number:<span class="number">001</span>, email:xiaolong@sohu.com&#125;</span><br></pre></td></tr></table></figure>
+<p>该三个文档就可以存储到同一个集合里面。</p>
+<h3 id="数据库">数据库</h3><p>多个集合形成一个数据库。</p>
+<p><img src="/images/201509/lhk_mongodb02.png" alt=""></p>
+<p><img src="/images/201509/lhk_mongodb03.png" alt=""></p>
+<h2 id="安装(Windows)">安装(Windows)</h2><h3 id="方式一：把_MongoDB_安装成一个_window_的一个服务">方式一：把 MongoDB 安装成一个 window 的一个服务</h3><ul>
+<li>下载软件，进行解压，拷贝到我们自己指定的目录<br>可以从官网下载：<a href="https://www.mongodb.com" target="_blank" rel="external">https://www.mongodb.com</a></li>
+<li>在解压后 mongodb 的目录下面新建一个目录用于存储数据库文件，再新建一个文件，用于存储日志文件。<br><img src="/images/201509/lhk_mongodb04.png" alt=""></li>
+<li>以管理员的方式进入 cmd, 并进入到 mongodb 的 bin 目录<br><img src="/images/201509/lhk_mongodb05.png" alt=""><br>可以执行 <code>mongod --help</code><br><img src="/images/201509/lhk_mongodb06.png" alt=""><br><img src="/images/201509/lhk_mongodb07.png" alt=""><blockquote>
+<p>开始执行安装：<br>语法：mongod  –install  –logpath 指定日志文件的路径 –dbpath 数据库目录的路径<br><code>mongod  --install  --logpath d:/server/mongodb/log.txt  --dbpath d:/server/mongodb/data</code><br><img src="/images/201509/lhk_mongodb08.png" alt=""></p>
+</blockquote>
+</li>
+<li>安装完成后，开始启动<br><img src="/images/201509/lhk_mongodb09.png" alt=""><br>也可以执行如下命令：net  mongodb  start（启动）  net  mongodb  stop(停止)<br>查看是否启动成功:<br><img src="/images/201509/lhk_mongodb10.png" alt=""></li>
+<li>如果要卸载，则停止服务后，在 cmd (管理员方式)执行 mongod  –remove 即可。</li>
+</ul>
+<h3 id="方式二：直接使用，无需安装">方式二：直接使用，无需安装</h3><p>进入到 cmd 直接执行：mongod –logpath 日志文件路径 –dbpath 数据库文件路径 –port 端口号<br>范围：1 - 65535  注意：1 - 1024 是被系统服务占用，我们自己要指定端口从 1024 后，和当前计算机不重复的端口即可。</p>
+<p><img src="/images/201509/lhk_mongodb11.png" alt=""> </p>
+<h3 id="客户端连接_mongodb_服务器">客户端连接 mongodb 服务器</h3><p>进入到 mongodb 的 bin 目录，执行<br>语法：mongo  ip:端口<br>如果是连接本地，使用默认端口，则可以执行 mongo 即可，后面不需要任何参数</p>
+<p><img src="/images/201509/lhk_mongodb12.png" alt=""> </p>
+<h2 id="入门使用">入门使用</h2><h3 id="创建（切换数据库）">创建（切换数据库）</h3><p>语法：<code>use 数据库名称</code><br>如果数据库存在，则是切换，如何数据库不存在，则是创建，创建完成后，没有执行任何的添加操作，则会自动删除</p>
+<h3 id="查看数据库">查看数据库</h3><p><code>show dbs</code></p>
+<h3 id="给指定数据库添加集合并且添加记录">给指定数据库添加集合并且添加记录</h3><p><code>db.集合名.insert({})</code><br>集合是隐式创建的，使用的时候创建的</p>
+<p><img src="/images/201509/lhk_mongodb13.png" alt=""> </p>
+<h3 id="查看数据库中所有的集合">查看数据库中所有的集合</h3><p><code>show  collections</code>  或  <code>show tables</code></p>
+<p>除了自己定义的集合外，所有的数据库都有一个 system.indexes 集合，该集合内容是记录该数据库下其他集合的一些信息。 </p>
+<h3 id="删除库中的集合">删除库中的集合</h3><p><code>use 数据库名称</code><br><code>db.集合名.drop()</code></p>
+<h3 id="删除数据库">删除数据库</h3><p><code>use 数据库名称</code><br><code>db.dropDatabase()</code></p>
+<h3 id="shell_的_help">shell 的 help</h3><p>里面的所有的 shell 可以完成帮助命令<br>全局的help数据库相关的<code>db.help()</code></p>
+<p><img src="/images/201509/lhk_mongodb14.png" alt=""></p>
+<p>集合相关的<code>db.集合名.help()</code></p>
+<p><img src="/images/201509/lhk_mongodb15.png" alt=""></p>
+<h2 id="增删改查操作">增删改查操作</h2><h3 id="添加文档">添加文档</h3><p>语法：<code>db.集合名.insert({键1：值1，键2：值2……..})</code></p>
+<p><img src="/images/201509/lhk_mongodb16.png" alt=""></p>
+<blockquote>
+<p>注意：<br>1：_id 字段是系统自动生成的，也可以自己指定任何类型的值，但值不能重复。<br>ObjectId 类型：<br>对象 id 是文档中唯一的 12 位的 ID<br>时间戳|机器码|PID|计数器<br><img src="/images/201509/lhk_mongodb17.png" alt=""><br>2：值的类型有哪些？<br>MongoDB 支持的数据类型<br><img src="/images/201509/lhk_mongodb18.png" alt=""><br>3：mongodb 客户端，支持 js 语法，<br>比如：使用 js 的循环来完成添加批量的文档。<br><img src="/images/201509/lhk_mongodb19.png" alt=""> </p>
+</blockquote>
+<h3 id="删除文档">删除文档</h3><p>语法：<code>db.集合名.remove({条件})</code></p>
+<p>案例1：删除年龄等于 4 的文档<br><code>db.php.remove({age:4})</code></p>
+<p><img src="/images/201509/lhk_mongodb20.png" alt=""></p>
+<p>案例2：删除年龄小于 2 的文档<br>要使用操作符来完成<br><code>db.php.remove({age:{&#39;$lt&#39;:2}})</code></p>
+<p><img src="/images/201509/lhk_mongodb21.png" alt=""></p>
+<blockquote>
+<p>常用操作符:<br>$lt , $lte , $gt , $gte( &lt; , &lt;= , &gt; , &gt;= ), $ne ( &lt;&gt; ) , $in , $nin , $or , $not,<br>$mod (取模), $exists, $where</p>
+</blockquote>
+<h3 id="修改文档">修改文档</h3><p>语法：<code>db.集合名.update({条件},{新文档})</code></p>
+<p>案例1：把年龄等于 3 的文档的名称改为 “xiaosan”<br><code>db.php.update({age:3},{name:&#39;xiaosan&#39;})</code></p>
+<p><img src="/images/201509/lhk_mongodb22.png" alt=""></p>
+<p>案例2：把年龄等于 5 的文档的名称改为 “xiaowu” ,不能删除旧文档</p>
+<p>使用修改器来完成操作</p>
+<blockquote>
+<p>\$inc : 加一个数字<br>$set : 修改某一个字段,如果该字段不存在就增这个字段</p>
+</blockquote>
+<p>比如：把 abc 的年龄加 2<br><code>db.user.update( {&quot;name&quot;:&quot;abc&quot;} , {&quot;$inc&quot; :  {&quot;age&quot;:2} } )</code><br>比如： 修改abc的电话号码为131111，如果没有这个字段就新增这个字段<br><code>db.user.update( {&quot;name&quot;:&quot;abc&quot;} , {&quot;$set&quot; : {&quot;tel&quot; : &quot;131111&quot;} } )</code><br>语法：<br><code>db.集合.update({条件},{修改器名称：{键：值}})</code></p>
+<p><img src="/images/201509/lhk_mongodb23.png" alt=""></p>
+<h3 id="查询文档">查询文档</h3><p>语法：·db.集合名.find({条件})·</p>
+<p>案例1：查询年龄等于 2 的文档</p>
+<p><code>db.php.find({age:2})</code></p>
+<p>案例2：查询年龄大于 5 的文档</p>
+<p><code>db.php.find({age:{&#39;$gt&#39;:5}})</code></p>
+<p>案例3：查询指定集合的所有的文档的个数</p>
+<p><code>db.php.find().count()</code></p>
+<p>案例4：可以指定查询的键</p>
+<p>语法：<code>db.user.find({条件},{键：1})</code> </p>
+<p>注意：1 是显示该键的内容，如果为 0 则是除了该键</p>
+<p><code>db.user.find({}, {&quot;age&quot;:1})</code>  –&gt; 列出所有人的 age 字段 </p>
+<p>案例5：根据年龄降序显示文档</p>
+<p>语法：<code>db.集合名.find().sort({age:-1})</code><br><code>db.collname.find().sort({age:1})</code>    根据年龄升序<br><code>db.collname.find().sort({age:-1})</code>    根据年龄降序</p>
+<p>案例6：从第三个文档开始显示，总共显示 4 个文档</p>
+<p>语法：<code>db.php.find().skip(跨过的文档数).limit(显示文档数)</code></p>
+<p><img src="/images/201509/lhk_mongodb24.png" alt=""></p>
+<h2 id="MongoDB_的权限验证（添加管理员）">MongoDB 的权限验证（添加管理员）</h2><p>MongoDB 的权限认证：MongoDB 里面的管理员是属于数据库的，要给数据库添加管理员和密码。</p>
+<h3 id="添加管理员语法">添加管理员语法</h3><blockquote>
+<p>注意点:<br>1.要选择数据库<br>2.执行添加的语法</p>
+</blockquote>
+<p><code>use admin</code><br><code>db.addUser(管理员名称，密码，是否只读)</code></p>
+<p><img src="/images/201509/lhk_mongodb25.png" alt=""></p>
+<p>注意：在添加普通管理员之前，一定要有一个超级管理员。</p>
+<p>添加一个普通管理员：</p>
+<p><code>use class</code><br><code>db.addUser(&#39;xiaolong&#39;, &#39;123456&#39;)</code></p>
+<p><img src="/images/201509/lhk_mongodb26.png" alt=""></p>
+<h3 id="执行权限认证">执行权限认证</h3><p>如果你是以安装服务的形式安装的 mongodb 则要卸载服务重新安装，在重新安装时，另外添加一个 –auth 的选项即可，–auth 表示开启权限认证，</p>
+<p><code>mongod  --reinstall --logpath d:/server/mongodb/log.txt --dbpath d:/server/mongodb/data --auth</code></p>
+<p>如果是直接启动方式来启动的，则重新启动，在启动时，添加 –auth 选项即可。</p>
+<p><img src="/images/201509/lhk_mongodb27.png" alt=""></p>
+<p>如果没有授权操作，则会报如下错误</p>
+<p><img src="/images/201509/lhk_mongodb28.png" alt=""></p>
+<p>如何授权语法：<br><code>use  数据库</code><br><code>db.auth(用户名称，用户密码)</code></p>
+<p><img src="/images/201509/lhk_mongodb29.png" alt=""></p>
+<p>如果是普通管理员操作其他的数据库，则会报如下错误。</p>
+<p><img src="/images/201509/lhk_mongodb30.png" alt=""></p>
+<h3 id="删除管理员">删除管理员</h3><p>新添加的管理员，是存储在当前数据库里面的 <code>system.users</code> 集合里面</p>
+<p>如果要删除管理员，则删除该集合的管理员对应的文档即可</p>
+<blockquote>
+<p>总结：<br>（1）非 admin 数据库的用户不能使用数据库命令，比如 show dbs 等。<br>（2）admin 数据库中的用户被视为超级用户（即管理员）。在认证之后，管理员可以读写所有数据库，执行特定的管理命令，<br>（3）在开启安全检查之前，一定要至少有个管理员账号。<br>（4）数据库的用户账号以文档的形式存储在 system.users 集合里面。可以在 system.users 集合中删掉用户账号文档，就可以删除用户。</p>
+</blockquote>
+<h2 id="php_操作_mongodb">php 操作 mongodb</h2><h3 id="安装扩展合适的扩展">安装扩展合适的扩展</h3><ul>
+<li>第一步：选择合适的扩展<br>下载合适的 php_mongodb.dll 文件。<br>（1）php 的版本<br>（2）是否是线程安全的 thread safe(ts)<br>（3）是 vc 几的<br>（4）php 是 32 位的还是 64 位的。</li>
+<li>第二步：把扩展拷贝到 php 的安装目录里面的 ext 目录里面</li>
+<li>第三步：打开 php.ini 文件，引入该扩展</li>
+<li>第四步：通过 phpinfo 函数测试是否成功</li>
+</ul>
+<h3 id="入门案例">入门案例</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="comment">// $m=new Mongo("mongodb://用户名称:密码@ip地址:端口号/数据库名称");</span></span><br><span class="line"><span class="variable">$m</span>=<span class="keyword">new</span> Mongo(<span class="string">"mongodb://root:1234@localhost:8888/admin"</span>);<span class="comment">//</span></span><br><span class="line"><span class="variable">$db</span>=<span class="variable">$m</span>-&gt;selectDb(<span class="string">"class"</span>);<span class="comment">//选择数据库</span></span><br><span class="line"><span class="comment">// 在黑窗口里面使用的"."用"-&gt;"来代替</span></span><br><span class="line"><span class="comment">// 在黑窗口里面使用的"&#123;&#125;"用"关联数组"来代替</span></span><br><span class="line"> <span class="comment">// (1)查看年龄等于6的文档</span></span><br><span class="line"><span class="comment">//$data = $db-&gt;php-&gt;find(array('age' =&gt; 6));</span></span><br><span class="line"><span class="variable">$data</span> = <span class="variable">$db</span>-&gt;java-&gt;find();</span><br><span class="line"><span class="comment">//(2)查看年龄大于 5的文档</span></span><br><span class="line"><span class="comment">// $data = $db-&gt;php-&gt;find(array('age' =&gt; array('$gt' =&gt; 5)));</span></span><br><span class="line"> <span class="comment">//(3)向php集合里面添加一个文档</span></span><br><span class="line"> <span class="comment">//$db-&gt;php-&gt;insert(array('name' =&gt; '韩国', 'city' =&gt; '汉城', '总统' =&gt; 'girl'));</span></span><br><span class="line"><span class="comment">/*echo "&lt;pre&gt;";</span><br><span class="line">print_r($data);*/</span></span><br><span class="line"><span class="keyword">foreach</span>(<span class="variable">$data</span> <span class="keyword">as</span> <span class="variable">$v</span>)&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'name:'</span> . <span class="variable">$v</span>[<span class="string">'name'</span>] . <span class="string">'---'</span> . <span class="variable">$v</span>[<span class="string">'age'</span>] . <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="preprocessor">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="实际应用">实际应用</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="comment">//$m=new Mongo("mongodb://用户名称:密码@ip地址:端口号/数据库名称");</span></span><br><span class="line"><span class="variable">$m</span>=<span class="keyword">new</span> Mongo(<span class="string">"mongodb://root:1234@localhost:8888/admin"</span>);<span class="comment">//</span></span><br><span class="line"><span class="variable">$db</span>=<span class="variable">$m</span>-&gt;selectDb(<span class="string">"class"</span>);<span class="comment">//选择数据库</span></span><br><span class="line"><span class="comment">//把mysql里面存储的数据，给移动到mongodb里面，</span></span><br><span class="line"><span class="variable">$conn</span> = mysql_connect(<span class="string">"localhost"</span>,<span class="string">'root'</span>,<span class="string">'root'</span>);</span><br><span class="line">mysql_query(<span class="string">"use php"</span>);</span><br><span class="line">mysql_query(<span class="string">"set names utf8"</span>);</span><br><span class="line"><span class="variable">$sql</span>=<span class="string">"select * from user"</span>;</span><br><span class="line"><span class="variable">$res</span> = mysql_query(<span class="variable">$sql</span>);</span><br><span class="line"><span class="keyword">while</span>(<span class="variable">$row</span>=mysql_fetch_assoc(<span class="variable">$res</span>))&#123;</span><br><span class="line">    <span class="variable">$db</span>-&gt;java-&gt;insert(<span class="variable">$row</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"ok"</span>;</span><br><span class="line"><span class="preprocessor">?&gt;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/02/JavaScript之作用域链/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          JavaScript之作用域链
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/01/非关系型数据库之Redis/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">非关系型数据库之Redis</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Lian HengKai
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+  <a href="https://github.com/lianhengkai"><img style="position: fixed; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+</body>
+</html>

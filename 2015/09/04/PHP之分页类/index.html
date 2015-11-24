@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>PHP之分页类 | Lian HengKai&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PHP之分页类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP之分页类">
+<meta property="og:url" content="http://yoursite.com/2015/09/04/PHP之分页类/index.html">
+<meta property="og:site_name" content="Lian HengKai's Blog">
+<meta property="og:description" content="PHP之分页类">
+<meta property="og:updated_time" content="2015-11-24T05:37:05.896Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP之分页类">
+<meta name="twitter:description" content="PHP之分页类">
+  
+    <link rel="alternative" href="/atom.xml" title="Lian HengKai&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Lian HengKai</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/应用">应用</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/lianhengkai" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 16.67px;">MySQL</a> <a href="/tags/PDO/" style="font-size: 10px;">PDO</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Smarty/" style="font-size: 11.67px;">Smarty</a> <a href="/tags/Sphinx/" style="font-size: 10px;">Sphinx</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/jQuery/" style="font-size: 13.33px;">jQuery</a> <a href="/tags/应用/" style="font-size: 18.33px;">应用</a> <a href="/tags/电脑/" style="font-size: 10px;">电脑</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Lian HengKai</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Lian HengKai</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/应用">应用</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/lianhengkai" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-PHP之分页类" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/04/PHP之分页类/" class="article-date">
+  	<time datetime="2015-09-04T08:52:23.000Z" itemprop="datePublished">2015-09-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PHP之分页类
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/PHP/">PHP</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>分页分为两种:</p>
+<p>合并分页: 分页同时进行数据分页处理</p>
+<p>单独分页: 分页只负责分页链接, 数据分页跟分页没有关系</p>
+<p>这里用的是单独分页</p>
+<a id="more"></a>
+<p>Page.class.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="comment">//分页类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Page</span> </span>&#123;</span><br><span class="line">    <span class="comment">//属性</span></span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$pagecount</span>; <span class="comment">//每页显示的数据量</span></span><br><span class="line">    <span class="comment">//构造方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">(<span class="variable">$pagecount</span> = <span class="number">0</span>)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//如果是经常有可能变的内容：走配置文件</span></span><br><span class="line">        <span class="variable">$this</span>-&gt;pagecount = (<span class="variable">$pagecount</span> == <span class="number">0</span>) ? <span class="variable">$GLOBALS</span>[<span class="string">'config'</span>][<span class="string">'pagecount'</span>] : <span class="variable">$pagecount</span>;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 生成分页链接</span><br><span class="line">     * <span class="doctag">@param</span>1	string	$url,要请求的脚本</span><br><span class="line">     * <span class="doctag">@param</span>2	int		$total,总记录数</span><br><span class="line">     * <span class="doctag">@param</span>3	int		$page = 1,当前页码</span><br><span class="line">     * return 字符串分页链接</span><br><span class="line">    */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getPageStr</span><span class="params">(<span class="variable">$url</span>, <span class="variable">$total</span>, <span class="variable">$page</span> = <span class="number">1</span>)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//求出总页数</span></span><br><span class="line">        <span class="variable">$pages</span> = ceil(<span class="variable">$total</span> / <span class="variable">$this</span>-&gt;pagecount);</span><br><span class="line">        <span class="comment">///文字提示</span></span><br><span class="line">        <span class="variable">$page_str</span> = <span class="string">"&lt;span id='page_str'&gt;总计 &#123;$total&#125; 个记录,分为 &#123;$pages&#125; 页,每页显示 &#123;$this-&gt;pagecount&#125; 条,当前第 &#123;$page&#125; 页&lt;/span&gt;"</span>;</span><br><span class="line">        <span class="comment">//求上一页和下一页</span></span><br><span class="line">        <span class="variable">$prev</span> = <span class="variable">$page</span> &gt; <span class="number">1</span> ? <span class="variable">$page</span> - <span class="number">1</span> : <span class="number">1</span>;</span><br><span class="line">        <span class="variable">$next</span> = <span class="variable">$page</span> &lt; <span class="variable">$pages</span> ? <span class="variable">$page</span> + <span class="number">1</span> : <span class="variable">$pages</span>;</span><br><span class="line">        <span class="comment">//点击分页</span></span><br><span class="line">        <span class="variable">$page_click</span> = <span class="string">&lt;&lt;&lt;END</span><br><span class="line">				&lt;span id='page_click'&gt;</span><br><span class="line">				&lt;a href="<span class="subst">&#123;$url&#125;</span>&amp;page=1"&gt;首页&lt;/a&gt;</span><br><span class="line">				&lt;a href="<span class="subst">&#123;$url&#125;</span>&amp;page=<span class="subst">&#123;$prev&#125;</span>"&gt;上一页&lt;/a&gt;</span><br><span class="line">				&lt;a href="<span class="subst">&#123;$url&#125;</span>&amp;page=<span class="subst">&#123;$next&#125;</span>"&gt;下一页&lt;/a&gt;</span><br><span class="line">				&lt;a href="<span class="subst">&#123;$url&#125;</span>&amp;page=<span class="subst">&#123;$pages&#125;</span>"&gt;末页&lt;/a&gt;</span><br><span class="line">				&lt;/span&gt;</span><br><span class="line">END;</span></span><br><span class="line">        <span class="comment">//数字分页</span></span><br><span class="line">        <span class="variable">$page_num</span> = <span class="string">"&lt;span id='page_num'&gt;"</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$page</span> - <span class="number">2</span> &gt; <span class="number">1</span>) <span class="variable">$page_num</span>.= <span class="string">"..."</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$page</span> - <span class="number">2</span> &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">1</span>; <span class="variable">$i</span> &lt;= <span class="number">5</span>; <span class="variable">$i</span>++) &#123;</span><br><span class="line">                <span class="variable">$page_num</span>.= <span class="string">"&lt;a href='&#123;$url&#125;&amp;page=&#123;$i&#125;'&gt;&#123;$i&#125;&lt;/a&gt;&amp;nbsp;"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">elseif</span> (<span class="variable">$page</span> + <span class="number">2</span> &gt;= <span class="variable">$pages</span>) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="variable">$pages</span> - <span class="number">5</span>; <span class="variable">$i</span> &lt;= <span class="variable">$pages</span>; <span class="variable">$i</span>++) &#123;</span><br><span class="line">                <span class="variable">$page_num</span>.= <span class="string">"&lt;a href='&#123;$url&#125;&amp;page=&#123;$i&#125;'&gt;&#123;$i&#125;&lt;/a&gt;&amp;nbsp;"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="variable">$page</span> - <span class="number">2</span>; <span class="variable">$i</span> &lt;= <span class="variable">$page</span> + <span class="number">2</span>; <span class="variable">$i</span>++) &#123;</span><br><span class="line">                <span class="variable">$page_num</span>.= <span class="string">"&lt;a href='&#123;$url&#125;&amp;page=&#123;$i&#125;'&gt;&#123;$i&#125;&lt;/a&gt;&amp;nbsp;"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$page</span> + <span class="number">2</span> &lt; <span class="variable">$pages</span>) <span class="variable">$page_num</span>.= <span class="string">"..."</span>;</span><br><span class="line">        <span class="variable">$page_num</span>.= <span class="string">"&lt;/span&gt;"</span>;</span><br><span class="line">        <span class="comment">//下拉框分页</span></span><br><span class="line">        <span class="variable">$page_opt</span> = <span class="string">"&lt;span id='page_opt'&gt;&lt;select name='page' onchange='location.href=\"&#123;$url&#125;&amp;page=\" + this.value'&gt;"</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">1</span>; <span class="variable">$i</span> &lt;= <span class="variable">$pages</span>; <span class="variable">$i</span>++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$i</span> == <span class="variable">$page</span>) &#123;</span><br><span class="line">                <span class="variable">$page_opt</span>.= <span class="string">"&lt;option value='&#123;$i&#125;' selected=\"selected\"&gt;&#123;$i&#125;&lt;/option&gt;"</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="variable">$page_opt</span>.= <span class="string">"&lt;option value='&#123;$i&#125;'&gt;&#123;$i&#125;&lt;/option&gt;"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="variable">$page_opt</span>.= <span class="string">"&lt;/select&gt;&lt;/span&gt;"</span>;</span><br><span class="line">        <span class="comment">//输入分页</span></span><br><span class="line">        <span class="variable">$page_form</span> = <span class="string">&lt;&lt;&lt;END</span><br><span class="line">					&lt;input type="text" name="page" id='p' value="<span class="subst">&#123;$page&#125;</span>" size="5" onfocus="this.value=''"/&gt;</span><br><span class="line">					&lt;input type="button" value="提交" onclick='doAction();'/&gt;</span><br><span class="line">			&lt;script type='text/javascript'&gt;</span><br><span class="line">				function doAction()&#123;</span><br><span class="line">					window.location.href="<span class="subst">&#123;$url&#125;</span>&amp;page=" + document.getElementById('p').value;</span><br><span class="line">				&#125;</span><br><span class="line">			&lt;/script&gt;</span><br><span class="line">END;</span></span><br><span class="line">        <span class="comment">//返回分页信息</span></span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$page_str</span> . <span class="variable">$page_click</span> . <span class="variable">$page_num</span> . <span class="variable">$page_opt</span> . <span class="variable">$page_form</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 分页函数</span><br><span class="line">     * <span class="doctag">@param</span>1	string	$url			请求页面</span><br><span class="line">     * <span class="doctag">@param</span>2	int		$total			总页数</span><br><span class="line">     * <span class="doctag">@param</span>2	int		$page			页码</span><br><span class="line">     * <span class="doctag">@return</span>	string	$page_banner	分页条</span><br><span class="line">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fenye_page</span><span class="params">(<span class="variable">$url</span>, <span class="variable">$total</span>, <span class="variable">$page</span> = <span class="number">1</span>)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//初始化数据</span></span><br><span class="line">        <span class="variable">$showpage</span> = <span class="number">5</span>; <span class="comment">//显示页数</span></span><br><span class="line">        <span class="variable">$pages</span> = ceil(<span class="variable">$total</span> / <span class="variable">$this</span>-&gt;pagecount); <span class="comment">//计算总页数</span></span><br><span class="line">        <span class="variable">$start</span> = <span class="number">1</span>; <span class="comment">//开始显示页码</span></span><br><span class="line">        <span class="variable">$end</span> = <span class="variable">$pages</span>; <span class="comment">//结束显示页码</span></span><br><span class="line">        <span class="variable">$showoffset</span> = (<span class="variable">$showpage</span> - <span class="number">1</span>) / <span class="number">2</span>; <span class="comment">//偏移量</span></span><br><span class="line">        <span class="variable">$page_banner</span> = <span class="string">'&lt;div class="page" id="page"&gt;'</span>; <span class="comment">//分页条</span></span><br><span class="line">        <span class="comment">//求上一页和下一页</span></span><br><span class="line">        <span class="variable">$prev</span> = <span class="variable">$page</span> &gt; <span class="number">1</span> ? <span class="variable">$page</span> - <span class="number">1</span> : <span class="number">1</span>;</span><br><span class="line">        <span class="variable">$next</span> = <span class="variable">$page</span> &lt; <span class="variable">$pages</span> ? <span class="variable">$page</span> + <span class="number">1</span> : <span class="variable">$pages</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$page</span> &gt; <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="variable">$page_banner</span>.= <span class="string">"&lt;a href='&#123;$url&#125;&amp;page=1'&gt;首页&lt;/a&gt;"</span>;</span><br><span class="line">            <span class="variable">$page_banner</span>.= <span class="string">"&lt;a href='&#123;$url&#125;&amp;page=&#123;$prev&#125;'&gt;&lt;上一页&lt;/a&gt;"</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable">$page_banner</span>.= <span class="string">'&lt;span class="display"&gt;首页&lt;/span&gt;'</span>;</span><br><span class="line">            <span class="variable">$page_banner</span>.= <span class="string">'&lt;span class="display"&gt;&lt;上一页&lt;/span&gt;'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$pages</span> &gt; <span class="variable">$showpage</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$page</span> &gt; <span class="variable">$showoffset</span> + <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="variable">$page_banner</span>.= <span class="string">'...'</span>; <span class="comment">//前省略号</span></span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$page</span> &gt; <span class="variable">$showoffset</span>) &#123;</span><br><span class="line">                <span class="variable">$start</span> = <span class="variable">$page</span> - <span class="variable">$showoffset</span>;</span><br><span class="line">                <span class="variable">$end</span> = <span class="variable">$pages</span> &gt; <span class="variable">$page</span> + <span class="variable">$showoffset</span> ? <span class="variable">$page</span> + <span class="variable">$showoffset</span> : <span class="variable">$pages</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="variable">$start</span> = <span class="number">1</span>;</span><br><span class="line">                <span class="variable">$end</span> = <span class="variable">$pages</span> &gt; <span class="variable">$showpage</span> ? <span class="variable">$showpage</span> : <span class="variable">$pages</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$page</span> + <span class="variable">$showoffset</span> &gt; <span class="variable">$pages</span>) &#123;</span><br><span class="line">                <span class="variable">$start</span> = <span class="variable">$start</span> - (<span class="variable">$page</span> + <span class="variable">$showoffset</span> - <span class="variable">$end</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="variable">$start</span>; <span class="variable">$i</span> &lt;= <span class="variable">$end</span>; <span class="variable">$i</span>++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$page</span> == <span class="variable">$i</span>) &#123;</span><br><span class="line">                <span class="variable">$page_banner</span>.= <span class="string">'&lt;span class="select"&gt;'</span> . <span class="variable">$i</span> . <span class="string">'&lt;/span&gt;'</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="variable">$page_banner</span>.= <span class="string">"&lt;a href='&#123;$url&#125;&amp;page=&#123;$i&#125;'&gt;$i&lt;/a&gt;"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$pages</span> &gt; <span class="variable">$showpage</span> &amp;&amp; <span class="variable">$pages</span> &gt; <span class="variable">$page</span> + <span class="variable">$showoffset</span>) &#123;</span><br><span class="line">            <span class="variable">$page_banner</span>.= <span class="string">'...'</span>; <span class="comment">//后省略号</span></span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$page</span> &lt; <span class="variable">$pages</span>) &#123;</span><br><span class="line">            <span class="variable">$page_banner</span>.= <span class="string">"&lt;a href='&#123;$url&#125;&amp;page=&#123;$next&#125;'&gt;下一页&gt;&lt;/a&gt;"</span>;</span><br><span class="line">            <span class="variable">$page_banner</span>.= <span class="string">"&lt;a href='&#123;$url&#125;&amp;page=&#123;$pages&#125;'&gt;尾页&lt;/a&gt;"</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable">$page_banner</span>.= <span class="string">'&lt;span class="display"&gt;下一页&gt;&lt;/span&gt;'</span>;</span><br><span class="line">            <span class="variable">$page_banner</span>.= <span class="string">'&lt;span class="display"&gt;尾页&lt;/span&gt;'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="variable">$page_banner</span>.= <span class="string">"共&amp;nbsp;&#123;$pages&#125;&amp;nbsp;页&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"</span>;</span><br><span class="line">        <span class="comment">//下拉框分页</span></span><br><span class="line">        <span class="variable">$page_banner</span>.= <span class="string">"&lt;span id='page_opt'&gt;&lt;select name='page' onchange='location.href=\"&#123;$url&#125;&amp;page=\" + this.value'&gt;"</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">1</span>; <span class="variable">$i</span> &lt;= <span class="variable">$pages</span>; <span class="variable">$i</span>++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$i</span> == <span class="variable">$page</span>) &#123;</span><br><span class="line">                <span class="variable">$page_banner</span>.= <span class="string">"&lt;option value='&#123;$i&#125;' selected=\"selected\"&gt;&#123;$i&#125;&lt;/option&gt;"</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="variable">$page_banner</span>.= <span class="string">"&lt;option value='&#123;$i&#125;'&gt;&#123;$i&#125;&lt;/option&gt;"</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="variable">$page_banner</span>.= <span class="string">"&lt;/select&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"</span>;</span><br><span class="line">        <span class="variable">$page_banner</span>.= <span class="string">"到&amp;nbsp;&amp;nbsp;第&amp;nbsp;&lt;input type='text' size='5' id='p' name='page' value='&#123;$page&#125;'  onfocus='this.value=\"\"'/&gt;&amp;nbsp;页&amp;nbsp;&amp;nbsp;"</span>;</span><br><span class="line">        <span class="variable">$page_banner</span>.= <span class="string">"&lt;input type='submit' class='button' value='确定' onclick='doAction();'/&gt;"</span>;</span><br><span class="line">        <span class="variable">$page_banner</span>.= <span class="string">&lt;&lt;&lt;SCR</span><br><span class="line">			&lt;script type='text/javascript'&gt;</span><br><span class="line">				function doAction()&#123;</span><br><span class="line">					window.location.href="<span class="subst">&#123;$url&#125;</span>&amp;page=" + document.getElementById('p').value;</span><br><span class="line">				&#125;</span><br><span class="line">			&lt;/script&gt;</span><br><span class="line">SCR;</span></span><br><span class="line">        <span class="variable">$page_banner</span>.= <span class="string">"&lt;/div&gt;"</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$page_banner</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/04/PHP之文件上传/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          PHP之文件上传
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/04/PHP之无限极分类/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PHP之无限极分类</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Lian HengKai
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+  <a href="https://github.com/lianhengkai"><img style="position: fixed; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+</body>
+</html>

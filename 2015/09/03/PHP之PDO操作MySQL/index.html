@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>PHP之PDO操作MySQL | Lian HengKai&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PHP之PDO操作MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP之PDO操作MySQL">
+<meta property="og:url" content="http://yoursite.com/2015/09/03/PHP之PDO操作MySQL/index.html">
+<meta property="og:site_name" content="Lian HengKai's Blog">
+<meta property="og:description" content="PHP之PDO操作MySQL">
+<meta property="og:updated_time" content="2015-11-24T03:56:36.959Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP之PDO操作MySQL">
+<meta name="twitter:description" content="PHP之PDO操作MySQL">
+  
+    <link rel="alternative" href="/atom.xml" title="Lian HengKai&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Lian HengKai</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/应用">应用</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/lianhengkai" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 16.67px;">MySQL</a> <a href="/tags/PDO/" style="font-size: 10px;">PDO</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Smarty/" style="font-size: 11.67px;">Smarty</a> <a href="/tags/Sphinx/" style="font-size: 10px;">Sphinx</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/jQuery/" style="font-size: 13.33px;">jQuery</a> <a href="/tags/应用/" style="font-size: 18.33px;">应用</a> <a href="/tags/电脑/" style="font-size: 10px;">电脑</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Lian HengKai</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Lian HengKai</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/应用">应用</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/lianhengkai" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-PHP之PDO操作MySQL" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/03/PHP之PDO操作MySQL/" class="article-date">
+  	<time datetime="2015-09-03T15:52:23.000Z" itemprop="datePublished">2015-09-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PHP之PDO操作MySQL
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PDO/">PDO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/PHP/">PHP</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="PDO">PDO</h2><h3 id="了解_PDO">了解 PDO</h3><ul>
+<li>什么是 PDO?</li>
+</ul>
+<p>PDO: PHP Data Object , PHP 数据对象, PHP 数据库抽象层<br>PDO是一种纯面向对象的操作: 低版本 PHP 不支持 5.0 以下, PHP 5.1 之后完全引入.</p>
+<a id="more"></a>
+<ul>
+<li>PDO 三大类?</li>
+</ul>
+<p>PDO 整个就由三个类实现: PDO 类, PDOStatement 类, PDOException 类</p>
+<p>PDO 类: 专门负责数据库的连接和初始化操作,以及没有结果的返回操作</p>
+<p>PDOStatement 类: 主要负责数据处理</p>
+<p>PDOException : PDO 异常处理类<br>在面向对象中,没有函数,将所有的错误信息都提交某个类的对象,对象负责所有错误的显示: 对象对应的类称之为异常类. PDO异常类只能处理 PDO 在使用过程中可能碰到的错误.</p>
+<h3 id="加载_PDO">加载 PDO</h3><p>PDO 是一种多数据库操作的抽象层: 系统根本不知道用户到底可能会用到哪种数据库. 所以就不会将对应的数据库的操作类加载到内存 : 所以 PDO 就不能操作对应的数据库类.</p>
+<p>若要使用 PDO 操作对应的数据库: 前提是将 PDO 可以操作的对应的数据库类加载到内存.<br>修改 PHP 的配置文件 php.ini 来加载 PDO 所对应的 mysql 类.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">; PDO要操作mysql</span><br><span class="line">extension=php_pdo_mysql.dll</span><br></pre></td></tr></table></figure>
+<h3 id="PDO_操作">PDO 操作</h3><p>PDO 是一种面向对象实现的技术.</p>
+<ul>
+<li>连接数据库,进行认证<br>PDO 类有一个构造方法,允许用户传入参数来选择性的连接数据库.<br>New PDO($dsn, $username, $password)<br>$dsn : 分为两个部分, 使用冒号分隔: 数据库类型: 数据库信息<br>数据库类型: mysql, oracle…<br>数据库信息: host, port, dbname, charset</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// PDO基本操作</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接认证</span></span><br><span class="line"><span class="variable">$dsn</span> = <span class="string">"mysql:host=localhost;port=3306;dbname=project;charset=utf8"</span>;</span><br><span class="line"><span class="variable">$user</span> = <span class="string">"root"</span>;</span><br><span class="line"><span class="variable">$pass</span> = <span class="string">"123"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实例化PDO类</span></span><br><span class="line"><span class="variable">$pdo</span> = <span class="keyword">new</span> PDO(<span class="variable">$dsn</span>, <span class="variable">$user</span>, <span class="variable">$pass</span>);</span><br><span class="line"><span class="comment">// 得到PDO对象</span></span><br><span class="line">var_dump(<span class="variable">$pdo</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>发送 SQL 指令</li>
+</ul>
+<p>SQL 指令最终能够返回的结果分为两类: 一类没有数据返回,另外一类是有数据返回</p>
+<p><code>PDO::exec</code>: 专门用来执行没有结果返回的 SQL 指令(增删改), 返回一个受影响的行数,如果是 false 说明 SQL 语句有语法错误</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 发送SQL指令</span></span><br><span class="line"><span class="comment">// exec</span></span><br><span class="line"><span class="variable">$sql</span> = <span class="string">"update pr_student set age = 20 where id = 1"</span>;</span><br><span class="line">var_dump(<span class="variable">$pdo</span>-&gt;exec(<span class="variable">$sql</span>));</span><br></pre></td></tr></table></figure>
+<p><code>PDO::query</code>: 专门用来执行有结果返回的SQL指令,返回的是false说明语法有错; 要么就是返回一个对象:PDOStatement</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// query</span></span><br><span class="line"><span class="variable">$sql</span> = <span class="string">"show tables"</span>;</span><br><span class="line"><span class="variable">$stmt</span> = <span class="variable">$pdo</span>-&gt;query(<span class="variable">$sql</span>);</span><br><span class="line">var_dump(<span class="variable">$stmt</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>释放资源</li>
+</ul>
+<p>释放对象: PDO 没有提供资源释放的方法( PDO 认为 PHP 脚本执行结束会自动释放所有内存资源). 但是可以释放对象: 使用unset</p>
+<h3 id="PDO_增删改查">PDO 增删改查</h3><p>虽然增删改查属于读和写, PDO 已经实现了读和写, 而新增通常与删改有一点点小区别.</p>
+<ul>
+<li>新增数据</li>
+</ul>
+<p>不管是任何 PDO 操作,都需要进行连接认证, 然后其他操作(如新增)都需要多行代码实现,实现的过程又基本一致. 应该将操作进行封装</p>
+<ol>
+<li>连接认证</li>
+<li>执行插入语句</li>
+<li>SQL 语句执行判断</li>
+<li>获取自增长 id</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// PDO操作: 插入操作</span></span><br><span class="line">header(<span class="string">'Content-type:text/html;charset=utf-8'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接认证</span></span><br><span class="line"><span class="variable">$pdo</span> = <span class="keyword">new</span> PDO(<span class="string">'mysql:dbname=project;charset=utf8'</span>,<span class="string">'root'</span>,<span class="string">'123'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送SQl语句执行</span></span><br><span class="line"><span class="variable">$sql</span> = <span class="string">"insert into pr_goods values(null,'iwatch',300000,2)"</span>;</span><br><span class="line"><span class="variable">$res</span> = <span class="variable">$pdo</span>-&gt;exec(<span class="variable">$sql</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断错误</span></span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$res</span> === <span class="keyword">false</span>)&#123;</span><br><span class="line">	<span class="comment">// SQL错误</span></span><br><span class="line">	<span class="keyword">echo</span> <span class="string">'SQL语句执行错误!&lt;br/&gt;'</span>;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">'错误编号是: '</span> . <span class="variable">$pdo</span>-&gt;errorCode() . <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">'错误原因是: '</span> . <span class="variable">$pdo</span>-&gt;errorInfo()[<span class="number">2</span>] . <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">	<span class="keyword">exit</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行成功</span></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$pdo</span>-&gt;lastInsertId();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>删改数据</li>
+</ul>
+<p>删改数据要得到结果是受影响的行数.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// PDO操作: 删改操作</span></span><br><span class="line">header(<span class="string">'Content-type:text/html;charset=utf-8'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接认证</span></span><br><span class="line"><span class="variable">$pdo</span> = <span class="keyword">new</span> PDO(<span class="string">'mysql:dbname=project;charset=utf8'</span>,<span class="string">'root'</span>,<span class="string">'123'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送SQl语句执行</span></span><br><span class="line"><span class="variable">$sql</span> = <span class="string">"update pr_goods set price = 30000 where id = 3"</span>;</span><br><span class="line"><span class="variable">$res</span> = <span class="variable">$pdo</span>-&gt;exec(<span class="variable">$sql</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断错误</span></span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$res</span> === <span class="keyword">false</span>)&#123;</span><br><span class="line">	<span class="comment">// SQL错误</span></span><br><span class="line">	<span class="keyword">echo</span> <span class="string">'SQL语句执行错误!&lt;br/&gt;'</span>;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">'错误编号是: '</span> . <span class="variable">$pdo</span>-&gt;errorCode() . <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">'错误原因是: '</span> . <span class="variable">$pdo</span>-&gt;errorInfo()[<span class="number">2</span>] . <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">	<span class="keyword">exit</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行成功</span></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$res</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查询数据</li>
+</ul>
+<p>1.连接认证</p>
+<p>2.发送 SQL 语句( query )得到 PDOStatement 类对象</p>
+<p>3.解析数据 : PDOStatement 类方法 : PDOStatement 类对象调用</p>
+<p>a) <code>fetch</code> 方法 : 类似 mysql 中的 mysql_fetch_array , 默认返回一个混合数组</p>
+<blockquote>
+<p>可以通过对 fetch 方法使用参数来控制fetch拿到的最终结果<br>获取关联数组: 使用 PDO::FETCH_ASSOC<br>获取索引数组: 使用 PDO::FETCH_NUM<br>获取对象: 将所有字段都当成对象的属性: PDO::FETCH_OBJ<br>stdClass 是一个系统类: 空类: 当数据强制转换时也会调用该类</p>
+</blockquote>
+<p>遍历读取所有的查询结果</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 遍历</span></span><br><span class="line"><span class="variable">$lists</span> = <span class="keyword">array</span>();</span><br><span class="line"><span class="keyword">while</span>(<span class="variable">$row</span> = <span class="variable">$stmt</span>-&gt;fetch(PDO::FETCH_ASSOC))&#123;</span><br><span class="line">	<span class="variable">$lists</span>[] = <span class="variable">$row</span>;</span><br><span class="line">&#125;</span><br><span class="line">var_dump(<span class="variable">$lists</span>);</span><br></pre></td></tr></table></figure>
+<p>b) PDO 提供了一个一次性获取所有的结果的功能: <code>fetchAll</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fetchAll方法</span></span><br><span class="line"><span class="variable">$lists</span> = <span class="variable">$stmt</span>-&gt;fetchAll(PDO::FETCH_ASSOC);</span><br><span class="line">var_dump(<span class="variable">$lists</span>);</span><br></pre></td></tr></table></figure>
+<p>c) <code>fetchColumn</code> : 从获取的所有结果中,将对应的所需要的列给出来.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fetchColumn方法</span></span><br><span class="line">var_dump(<span class="variable">$stmt</span>-&gt;fetchColumn());</span><br><span class="line"><span class="comment">// fetchColumn是从获取的一条记录中去获取指定列: 而不是从所有记录中获得一列</span></span><br><span class="line">var_dump(<span class="variable">$stmt</span>-&gt;fetchColumn(<span class="number">1</span>));</span><br></pre></td></tr></table></figure>
+<p>d) <code>fetchObject</code> : 将一条记录中的所有字段当做一个对象的属性</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fetchObject方法</span></span><br><span class="line">var_dump(<span class="variable">$stmt</span>-&gt;fetchObject());			<span class="comment">// stdClass类的对象</span></span><br></pre></td></tr></table></figure>
+<h2 id="预处理">预处理</h2><blockquote>
+<p>什么是预处理?<br>预处理: 提前处理<br>事先将有可能要执行的 SQL 指令,发送给服务器,但是不立即执行.  当需要使用的时候,只用简短的指令来触发预存储的指令.</p>
+</blockquote>
+<h3 id="预处理语法">预处理语法</h3><p>预处理不是 PDO 的特性: PDO 所有的特性都是建立原来的数据库上.</p>
+<p>预处理有点类似事务处理:需要多个步骤共同实现</p>
+<p>1.准备预处理指令: 将要操作的 SQL 指令发送给服务器,要求服务器不要立即执行.<br>prepare 预处理名字 from “要执行的 SQL 语句”;</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 准备预处理</span></span><br><span class="line"><span class="operator"><span class="keyword">prepare</span> goods_select <span class="keyword">from</span> <span class="string">"select * from pr_goods"</span>;</span></span><br></pre></td></tr></table></figure>
+<p>服务器将当前要执行的预处理语句保存在当前用户当次连接对应的日志文件中. 断开连接预处理就不存在了.</p>
+<p>通常预处理都是事先有一些条件是不知道的,需要使用占位符来代替: ?<br>prepare 预处理名字 from “要执行的 SQL 语句: 但是其中有不知道的条件结果,使用 ? 代替”;</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 预处理:带条件</span></span><br><span class="line"><span class="operator"><span class="keyword">prepare</span> goods_select_by_id <span class="keyword">from</span> <span class="string">'select * from pr_goods where id = ?'</span>;</span></span><br></pre></td></tr></table></figure>
+<p>2.执行预处理: 需要一条指令来触发对应的预处理指令</p>
+<p>execute 预处理名字;</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 触发预处理</span></span><br><span class="line"><span class="operator"><span class="keyword">execute</span> goods_select;</span></span><br></pre></td></tr></table></figure>
+<p>执行预处理: 如果预处理中有占位符,那么在执行预处理的时候必须使用对应的变量来去代替占位符.</p>
+<p>execute 预处理名字 use 变量列表;</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 执行预处理</span></span><br><span class="line"><span class="operator"><span class="keyword">execute</span> goods_select_by_id <span class="keyword">using</span> <span class="number">1</span>;</span> <span class="comment">-- 错误: 1不是变量</span></span><br><span class="line"></span><br><span class="line"><span class="operator"><span class="keyword">set</span> @<span class="keyword">id</span> = <span class="number">1</span>;</span></span><br><span class="line"><span class="operator"><span class="keyword">execute</span> goods_select_by_id <span class="keyword">using</span> @<span class="keyword">id</span>;</span></span><br></pre></td></tr></table></figure>
+<h3 id="预处理意义">预处理意义</h3><p>预处理: 提前将一条可能要执行 N 次的非常复杂的 SQL 语句,但是条件不变或者非常简单,提前交给服务器. 然后在需要执行的时候,给定触发条件既可.<br>如连接查询 : 通过 id 条件判断</p>
+<p>预处理作用</p>
+<ol>
+<li>节省代码: 如果有多个地方需要使用对应的 SQL 语句,可以执行一次长 SQL 指令,后面使用触发指令;</li>
+<li>节省带宽,增加效率.</li>
+</ol>
+<h3 id="PDO_预处理">PDO 预处理</h3><p>PDO 对预处理操作进行了封装: 封装也需要两个步骤</p>
+<ul>
+<li>准备预处理 <code>PDO::prepare</code></li>
+</ul>
+<p>因为 PDO 对预处理进行了封装: 所以用户不需要去写 <code>prepare</code> 关键字: 直接写要执行的 SQL 指令: 如果在指令有参数需要使用占位符的, PDO 提供了两种形式: 一种是原始占位符 <code>?</code> ;一种是 PDO 自制的占位符:  <code>:名字</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// PDO预处理</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接认证</span></span><br><span class="line"><span class="variable">$pdo</span> = <span class="keyword">new</span> PDO(<span class="string">'mysql:dbname=project;charset=utf8'</span>,<span class="string">'root'</span>,<span class="string">'1234'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 准备预处理: 查询指定学生的信息</span></span><br><span class="line"><span class="variable">$sql</span> = <span class="string">"select s.*,c.name as c_name,c.room from pr_student as s left join pr_class as c on s.c_id = c.id where s.id = :id"</span>;</span><br><span class="line"><span class="comment">// PDO会解析SQL指令: 发现指令中有:开头的字符串:把该字符串变成 ? </span></span><br><span class="line"><span class="comment">// 执行预处理</span></span><br><span class="line"><span class="variable">$stmt</span> = <span class="variable">$pdo</span>-&gt;prepare(<span class="variable">$sql</span>);</span><br><span class="line">var_dump(<span class="variable">$stmt</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>执行预处理 <code>PDOStatement::execute()</code></li>
+</ul>
+<p>预处理指令中,如果包含了占位符(参数),那么在执行预处理的时候,必须携带对应的数据: PDO 提供了多种方式允许用户携带参数.</p>
+<p>a)使用数组携带: 根据实际的占位符的使用携带参数.</p>
+<p>如果占位符是 PDO 指定的变量名:  <code>:名字</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">array</span>(<span class="string">':名字'</span> =&gt; 值...);	<span class="comment">// 如果有多个占位符,数组元素顺序无所谓</span></span><br></pre></td></tr></table></figure>
+<p>如果占位符使用的原始占位符:  <code>?</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">array</span>(值<span class="number">1</span>,值<span class="number">2.</span>..);		<span class="comment">// 要求值的顺序必须与占位符的顺序一致</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行预处理</span></span><br><span class="line"><span class="comment">// 捆绑参数</span></span><br><span class="line"><span class="variable">$args</span> = <span class="keyword">array</span>(<span class="string">':id'</span> =&gt; <span class="number">11</span>);</span><br><span class="line"><span class="comment">// 执行</span></span><br><span class="line"><span class="variable">$res</span> = <span class="variable">$stmt</span>-&gt;execute(<span class="variable">$args</span>);	<span class="comment">// 布尔结果: 告诉预处理是否执行成功</span></span><br><span class="line">var_dump(<span class="variable">$res</span>);</span><br></pre></td></tr></table></figure>
+<p>如果预处理指令是一个有返回值的指令: 还需要额外的使用 PDOStatement 类的其他数据获取方式来抓取.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取查询结果</span></span><br><span class="line"><span class="variable">$row</span> = <span class="variable">$stmt</span>-&gt;fetch(PDO::FETCH_ASSOC);</span><br><span class="line">var_dump(<span class="variable">$row</span>);</span><br></pre></td></tr></table></figure>
+<p>b)使用绑定参数的形式来指定对应的预处理占位符的结果</p>
+<p>1)<code>PDOStatement::bindValue</code> : 给占位符绑定数据</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 绑定参数</span></span><br><span class="line"><span class="comment">// bindValue: 绑定值</span></span><br><span class="line"><span class="variable">$stmt</span>-&gt;bindValue(<span class="string">':id'</span>,<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行预处理</span></span><br><span class="line"><span class="variable">$stmt</span>-&gt;execute();</span><br></pre></td></tr></table></figure>
+<p>2)<code>PDOStatement::bindParam</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 绑定参数</span></span><br><span class="line"><span class="comment">// bindParam: 绑定变量</span></span><br><span class="line"><span class="comment">// $stmt-&gt;bindParam(':id',3);			// 错误: bindParam第二个参数是引用传值</span></span><br><span class="line"><span class="variable">$id</span> = <span class="number">3</span>;</span><br><span class="line"><span class="variable">$stmt</span>-&gt;bindParam(<span class="string">':id'</span>,<span class="variable">$id</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行预处理</span></span><br><span class="line"><span class="variable">$stmt</span>-&gt;execute();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>bindValue 和 bindParam 的区别</p>
+<ol>
+<li>使用方式不同: bindValue 可以传值,但是 bindParam 必须传变量</li>
+<li>bindParam 绑定一次之后,可以通过修改变量就实现重新绑定; 但是 bindValue 修改变量也没用</li>
+</ol>
+</blockquote>
+<p>如果预处理语句使用的原始占位符,那么在使用 bind 绑定变量的时候,就是使用数字来代表对应的占位符.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 绑定参数</span></span><br><span class="line"><span class="comment">// bindValue: 绑定值</span></span><br><span class="line"><span class="comment">// $stmt-&gt;bindValue(':id',2);</span></span><br><span class="line"><span class="variable">$id</span> = <span class="number">2</span>;</span><br><span class="line"><span class="comment">// bindParam: 绑定变量</span></span><br><span class="line"><span class="variable">$stmt</span>-&gt;bindValue(<span class="number">1</span>,<span class="variable">$id</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="PDO_事务">PDO 事务</h2><p>PDO 对事务操作进行了封装: 把各个步骤封装成方法了. </p>
+<h3 id="开启事务">开启事务</h3><p>PDO::beginTransaction ==&gt; <code>$pdo-&gt;exec(&#39;start transaction&#39;);</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// PDO事务</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接认证</span></span><br><span class="line"><span class="variable">$pdo</span> = <span class="keyword">new</span> PDO(<span class="string">'mysql:dbname=project;charset=utf8'</span>,<span class="string">'root'</span>,<span class="string">'123'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开启事务</span></span><br><span class="line"><span class="variable">$pdo</span>-&gt;beginTransaction();</span><br></pre></td></tr></table></figure>
+<h3 id="事务操作">事务操作</h3><p>执行事务: PDO::exec 执行写操作语句</p>
+<ul>
+<li>操作1: 减少 money</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 连接认证</span></span><br><span class="line"><span class="variable">$pdo</span> = <span class="keyword">new</span> PDO(<span class="string">'mysql:dbname=project;charset=utf8'</span>,<span class="string">'root'</span>,<span class="string">'123'</span>);</span><br><span class="line"><span class="comment">// 开启事务</span></span><br><span class="line"><span class="variable">$pdo</span>-&gt;beginTransaction();</span><br><span class="line"><span class="comment">// 转账</span></span><br><span class="line"><span class="variable">$sql</span> = <span class="string">"update pr_account set money = money - 1000 where id = 1"</span>;</span><br><span class="line"><span class="variable">$pdo</span>-&gt;exec(<span class="variable">$sql</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>操作2: 增加 money</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// PDO事务</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接认证</span></span><br><span class="line"><span class="variable">$pdo</span> = <span class="keyword">new</span> PDO(<span class="string">'mysql:dbname=project;charset=utf8'</span>,<span class="string">'root'</span>,<span class="string">'123'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开启事务</span></span><br><span class="line"><span class="variable">$pdo</span>-&gt;beginTransaction();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 转账</span></span><br><span class="line"><span class="variable">$sql</span> = <span class="string">"update pr_account set money = money - 1000 where id = 1"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断第一步的执行结果: 选择性的执行第二部</span></span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$pdo</span>-&gt;exec(<span class="variable">$sql</span>))&#123;</span><br><span class="line">	<span class="comment">// 事务第一步OK: 下一步</span></span><br><span class="line">	<span class="variable">$sql</span> = <span class="string">"update pr_account set money = money + 1000 where id = 2"</span>;</span><br><span class="line">	<span class="keyword">if</span>(<span class="variable">$pdo</span>-&gt;exec(<span class="variable">$sql</span>))&#123;</span><br><span class="line">		<span class="comment">// 转账成功</span></span><br><span class="line">		<span class="variable">$pdo</span>-&gt;commit();</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="comment">// 转账失败</span></span><br><span class="line">		<span class="variable">$pdo</span>-&gt;rollback();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="comment">// 事务失败</span></span><br><span class="line">	<span class="variable">$pdo</span>-&gt;rollback();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="事务提交:_成功和失败">事务提交: 成功和失败</h3><ul>
+<li><p>PDO::commit  ==&gt; <code>$pdo-&gt;exec(&#39;commit&#39;);</code></p>
+</li>
+<li><p>PDO::rollback      ==&gt; <code>$pdo-&gt;exec(&#39;rollback&#39;);</code></p>
+</li>
+</ul>
+<p>PDO 没有提供回滚到某个已经执行的点的机制: 用户可以自定义</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$pdo</span>-&gt;exec(<span class="string">'savepoint sp1'</span>);		<span class="comment">// 设置回滚点</span></span><br><span class="line"><span class="variable">$pdo</span>-&gt;exec(<span class="string">'rollback to sp1'</span>);		<span class="comment">// 回到回滚点</span></span><br></pre></td></tr></table></figure>
+<h2 id="PDO_属性处理">PDO 属性处理</h2><p>PDO 类中: 没有属性<br>PDOStatement 类中: 一个属性 query_string (要执行的 SQL 语句)</p>
+<p>PDO 是操作数据库: 数据库是有一些表现, 客户端是可以控制(字符集设置, 自动提交, 自增长…)<br>PDO 属性处理: 指的是通过 PDO 来设置数据库服务器的表现方式(属性指的是服务器的属性),不是 PDO 类的属性.</p>
+<p>属性有两种操作方式<br>获取属性: <code>PDO::getAttribute(&#39;属性名&#39;)</code><br>设置属性: <code>PDO::setAttribute(&#39;属性名&#39;,属性值)</code></p>
+<p>属性名字还是属性值,在 PDO 中都使用常量代替了.</p>
+<p>常见的属性处理</p>
+<ul>
+<li>PDO::ATTR_AUTOCOMMIT（1,0）, 默认是 1</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查看属性</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;pre&gt;'</span>;</span><br><span class="line"><span class="comment">//查看自动提交</span></span><br><span class="line">var_dump(<span class="variable">$pdo</span>-&gt;getAttribute(PDO::ATTR_AUTOCOMMIT));		<span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 修改机制</span></span><br><span class="line">var_dump(<span class="variable">$pdo</span>-&gt;setAttribute(PDO::ATTR_AUTOCOMMIT,<span class="number">0</span>));	</span><br><span class="line">var_dump(<span class="variable">$pdo</span>-&gt;getAttribute(PDO::ATTR_AUTOCOMMIT));		<span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>PDO::ATTR_CASE: 控制数据查询结果中,字段的大小写</li>
+</ul>
+<p>– PDO::CASE_LOWER    : 字段名全部小写<br>– PDO::CASE_UPPER    : 字段名全部大写<br>– PDO::CASE_NATURAL    : 自然,字段本身是什么,就显示什么</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查看字段大小写</span></span><br><span class="line"><span class="comment">// echo PDO::CASE_LOWER,PDO::CASE_UPPER,PDO::CASE_NATURAL;</span></span><br><span class="line">var_dump(<span class="variable">$pdo</span>-&gt;getAttribute(PDO::ATTR_CASE));				<span class="comment">//0</span></span><br><span class="line">var_dump(<span class="variable">$pdo</span>-&gt;setAttribute(PDO::ATTR_CASE,PDO::CASE_UPPER));</span><br><span class="line"> </span><br><span class="line"><span class="variable">$stmt</span> = <span class="variable">$pdo</span>-&gt;query(<span class="string">"select * from pr_account"</span>);</span><br><span class="line">var_dump(<span class="variable">$stmt</span>-&gt;fetch(PDO::FETCH_ASSOC));</span><br></pre></td></tr></table></figure>
+<ul>
+<li>PDO::ATTR_ERRMODE: PDO 在处理 SQL 错误的时候,会选择什么样的模式来进行处理</li>
+</ul>
+<p>– PDO::ERRMODE_SILENT    : 静默模式,出错了不报错(静默)</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 错误模式</span></span><br><span class="line"><span class="variable">$pdo</span>-&gt;exec(<span class="string">'set names utf-8'</span>);	<span class="comment">// 默认模式是静默模式</span></span><br></pre></td></tr></table></figure>
+<p>– PDO::ERRMODE_WARNING    : 警告模式,出错了给出一个警告<br>– PDO::ERRMODE_EXCEPTION: 异常模式: 出错报异常</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var_dump(<span class="variable">$pdo</span>-&gt;setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING));</span><br><span class="line"><span class="variable">$pdo</span>-&gt;exec(<span class="string">'set names utf-8'</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>PDO::ATTR_PERSISTENT</li>
+</ul>
+<p>是否支持长连接: 一个脚本执行结束,但是与数据库的连接不断开,另外一个脚本可以接着用. </p>
+<p>– TRUE: 长连接: 脚本执行不立即释放<br>— 条件1: 数据库服务器允许长连接,在my.ini中可以配置<br>— 条件2: 客户端( apache : PHP )要支持长连接<br>– FALSE: 短连接: 脚本执行结束一定释放</p>
+<h2 id="PDO_异常">PDO 异常</h2><p>异常: 一种错误处理方式: 用类处理 :出错了不会给出警告,把所有的错误信息放到异常类的对象中: PDOException</p>
+<p>以前 PHP 错误模式: 警告模式,出错了给出一个警告和错误信息.</p>
+<p>要处理异常,就必须采用异常的处理模式: 将所有有可能出错的代码都放到一个容器中,一旦出错,就会被捕捉: 异常类对象自动产生 ,就可以控制对应错误处理.<br>异常处理语法</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">  <span class="comment">// 捕捉错误的代码容易</span></span><br><span class="line">  <span class="comment">// 所有有可能出错的代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(PDOException <span class="variable">$e</span>)&#123;</span><br><span class="line">  <span class="comment">// 一旦出现PDOException类的对象产生:进入到catch对应的容器中</span></span><br><span class="line">  <span class="comment">// 通过对象$e进行错误分析和处理</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// PDO异常处理</span></span><br><span class="line">header(<span class="string">'Content-type:text/html;charset=utf-8'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 连接认证:有可能出错,放到捕捉错误的容器中</span></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">	<span class="comment">// 错误捕捉容器</span></span><br><span class="line">	<span class="variable">$pdo</span> = <span class="keyword">new</span> PDO(<span class="string">'mysql:dbname=project;charset=utf8'</span>,<span class="string">'root'</span>,<span class="string">'123'</span>);</span><br><span class="line"></span><br><span class="line">&#125;<span class="keyword">catch</span>(PDOException <span class="variable">$e</span>)&#123;</span><br><span class="line">	<span class="comment">// 错误处理容器</span></span><br><span class="line">	<span class="comment">// var_dump($e);</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 错误提示</span></span><br><span class="line">	<span class="keyword">echo</span> <span class="string">'错误编码是 : '</span> . <span class="variable">$e</span>-&gt;getCode() . <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">'错误原因是 : '</span> . <span class="variable">$e</span>-&gt;getMessage() . <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">	<span class="keyword">exit</span>;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="PDO错误模式默认设置静默">PDO错误模式默认设置静默</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 继续处理</span></span><br><span class="line"><span class="variable">$pdo</span>-&gt;exec(<span class="string">'set names utf-8'</span>);	<span class="comment">// 错误: 默认模式是静默模式</span></span><br></pre></td></tr></table></figure>
+<h3 id="修改错误模式为异常">修改错误模式为异常</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置错误模式:异常模式</span></span><br><span class="line"><span class="variable">$pdo</span>-&gt;setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);</span><br><span class="line"></span><br><span class="line"><span class="variable">$pdo</span>-&gt;exec(<span class="string">'set names utf-8'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="异常类的方法">异常类的方法</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">PDOException extends RuntimeException &#123;</span><br><span class="line"> </span><br><span class="line">	<span class="comment">/* 属性 */</span></span><br><span class="line">	 </span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">array</span> <span class="variable">$errorInfo</span> ;</span><br><span class="line">	 </span><br><span class="line">	<span class="keyword">protected</span> string <span class="variable">$message</span> ;</span><br><span class="line">	 </span><br><span class="line">	<span class="keyword">protected</span> string <span class="variable">$code</span> ;</span><br><span class="line">	 </span><br><span class="line">	<span class="comment">/* 继承的方法 */</span></span><br><span class="line">	 </span><br><span class="line">	<span class="keyword">final</span> <span class="keyword">public</span> string <span class="keyword">Exception</span>::getMessage ( void )</span><br><span class="line">	 </span><br><span class="line">	<span class="keyword">final</span> <span class="keyword">public</span> <span class="keyword">Exception</span> <span class="keyword">Exception</span>::getPrevious ( void )</span><br><span class="line">	 </span><br><span class="line">	<span class="keyword">final</span> <span class="keyword">public</span> int <span class="keyword">Exception</span>::getCode ( void )</span><br><span class="line">	 </span><br><span class="line">	<span class="keyword">final</span> <span class="keyword">public</span> string <span class="keyword">Exception</span>::getFile ( void )</span><br><span class="line">	 </span><br><span class="line">	<span class="keyword">final</span> <span class="keyword">public</span> int <span class="keyword">Exception</span>::getLine ( void )</span><br><span class="line">	 </span><br><span class="line">	<span class="keyword">final</span> <span class="keyword">public</span> <span class="keyword">array</span> <span class="keyword">Exception</span>::getTrace ( void )</span><br><span class="line">	 </span><br><span class="line">	<span class="keyword">final</span> <span class="keyword">public</span> string <span class="keyword">Exception</span>::getTraceAsString ( void )</span><br><span class="line">	 </span><br><span class="line">	<span class="keyword">public</span> string <span class="keyword">Exception</span>::__toString ( void )</span><br><span class="line">	 </span><br><span class="line">	<span class="keyword">final</span> <span class="keyword">private</span> void <span class="keyword">Exception</span>::__clone ( void )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>有时候,代码执行可能没有任何错误: 更新返回的结果是 0 ,说明更新没有成功,但是没有语法错误. 可以主动跑出异常</p>
+<p>throw new PDOException;</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 更新操作</span></span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$pdo</span>-&gt;exec(<span class="string">'update pr_goods set inv = 98 where id = 1'</span>))&#123;</span><br><span class="line">	<span class="comment">// 执行成功</span></span><br><span class="line">	<span class="comment">// 成功处理</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="comment">// 没有正常更新</span></span><br><span class="line">	<span class="comment">// 抛出异常</span></span><br><span class="line">	<span class="keyword">throw</span> <span class="keyword">new</span> PDOException();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="封装_PDO_类">封装 PDO 类</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 封装PDO类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyPDO</span> </span>&#123;</span><br><span class="line">    <span class="comment">//属性</span></span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$type</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$host</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$port</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$user</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$pass</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$dbname</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$charset</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$options</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$prefix</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 对象属性</span></span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$pdo</span>; <span class="comment">// 保存PDO对象</span></span><br><span class="line">    <span class="keyword">private</span> <span class="variable">$stmt</span>; <span class="comment">// 保存PDOStatement对象</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 构造方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">(<span class="variable">$arr</span> = array<span class="params">()</span>)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 初始化属性：默认值走配置文件</span></span><br><span class="line">        <span class="variable">$this</span>-&gt;type = <span class="keyword">isset</span>(<span class="variable">$arr</span>[<span class="string">'type'</span>]) ? <span class="variable">$arr</span>[<span class="string">'type'</span>] : <span class="variable">$GLOBALS</span>[<span class="string">'config'</span>][<span class="string">'db'</span>][<span class="string">'type'</span>];</span><br><span class="line">        <span class="variable">$this</span>-&gt;host = <span class="keyword">isset</span>(<span class="variable">$arr</span>[<span class="string">'host'</span>]) ? <span class="variable">$arr</span>[<span class="string">'host'</span>] : <span class="variable">$GLOBALS</span>[<span class="string">'config'</span>][<span class="string">'db'</span>][<span class="string">'host'</span>];</span><br><span class="line">        <span class="variable">$this</span>-&gt;port = <span class="keyword">isset</span>(<span class="variable">$arr</span>[<span class="string">'port'</span>]) ? <span class="variable">$arr</span>[<span class="string">'port'</span>] : <span class="variable">$GLOBALS</span>[<span class="string">'config'</span>][<span class="string">'db'</span>][<span class="string">'port'</span>];</span><br><span class="line">        <span class="variable">$this</span>-&gt;user = <span class="keyword">isset</span>(<span class="variable">$arr</span>[<span class="string">'user'</span>]) ? <span class="variable">$arr</span>[<span class="string">'user'</span>] : <span class="variable">$GLOBALS</span>[<span class="string">'config'</span>][<span class="string">'db'</span>][<span class="string">'user'</span>];</span><br><span class="line">        <span class="variable">$this</span>-&gt;pass = <span class="keyword">isset</span>(<span class="variable">$arr</span>[<span class="string">'pass'</span>]) ? <span class="variable">$arr</span>[<span class="string">'pass'</span>] : <span class="variable">$GLOBALS</span>[<span class="string">'config'</span>][<span class="string">'db'</span>][<span class="string">'pass'</span>];</span><br><span class="line">        <span class="variable">$this</span>-&gt;dbname = <span class="keyword">isset</span>(<span class="variable">$arr</span>[<span class="string">'dbname'</span>]) ? <span class="variable">$arr</span>[<span class="string">'dbname'</span>] : <span class="variable">$GLOBALS</span>[<span class="string">'config'</span>][<span class="string">'db'</span>][<span class="string">'dbname'</span>];</span><br><span class="line">        <span class="variable">$this</span>-&gt;charset = <span class="keyword">isset</span>(<span class="variable">$arr</span>[<span class="string">'charset'</span>]) ? <span class="variable">$arr</span>[<span class="string">'charset'</span>] : <span class="variable">$GLOBALS</span>[<span class="string">'config'</span>][<span class="string">'db'</span>][<span class="string">'charset'</span>];</span><br><span class="line">        <span class="variable">$this</span>-&gt;prefix = <span class="keyword">isset</span>(<span class="variable">$arr</span>[<span class="string">'prefix'</span>]) ? <span class="variable">$arr</span>[<span class="string">'prefix'</span>] : <span class="variable">$GLOBALS</span>[<span class="string">'config'</span>][<span class="string">'db'</span>][<span class="string">'prefix'</span>];</span><br><span class="line">        <span class="variable">$this</span>-&gt;options = <span class="keyword">isset</span>(<span class="variable">$arr</span>[<span class="string">'options'</span>]) ? <span class="variable">$arr</span>[<span class="string">'options'</span>] : <span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">// 连接认证</span></span><br><span class="line">        <span class="variable">$this</span>-&gt;db_connect();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 连接认证</span></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">db_connect</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 连接数据库：PDO</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="variable">$this</span>-&gt;pdo = <span class="keyword">new</span> PDO(<span class="variable">$this</span>-&gt;type . <span class="string">':host='</span> . <span class="variable">$this</span>-&gt;host . <span class="string">';port='</span> . <span class="variable">$this</span>-&gt;port . <span class="string">';dbname='</span> . <span class="variable">$this</span>-&gt;dbname . <span class="string">';charset='</span> . <span class="variable">$this</span>-&gt;charset, <span class="variable">$this</span>-&gt;user, <span class="variable">$this</span>-&gt;pass, <span class="variable">$this</span>-&gt;options);</span><br><span class="line">            <span class="comment">// 修改错误模式：异常模式</span></span><br><span class="line">            <span class="variable">$this</span>-&gt;pdo-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span>(PDOException <span class="variable">$e</span>) &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">'数据库连接失败！'</span>;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">'失败编号是：'</span> . <span class="variable">$e</span>-&gt;getCode() . <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">'错误原因是：'</span> . <span class="variable">$e</span>-&gt;getMessage() [<span class="number">2</span>] . <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">            <span class="keyword">exit</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 封装exec错误处理:已经将删除和修改的方法做好</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">db_exec</span><span class="params">(<span class="variable">$sql</span>)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// PDO类::exec方法执行</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="variable">$this</span>-&gt;pdo-&gt;exec(<span class="variable">$sql</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span>(PDOException <span class="variable">$e</span>) &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">'SQL语句执行失败！'</span>;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">'失败编号是：'</span> . <span class="variable">$e</span>-&gt;getCode() . <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">'错误原因是：'</span> . <span class="variable">$e</span>-&gt;getMessage() [<span class="number">2</span>] . <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">            <span class="keyword">exit</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 封装query错误处理</span></span><br><span class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">db_query</span><span class="params">(<span class="variable">$sql</span>)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// PDO类::exec方法执行</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="variable">$this</span>-&gt;stmt = <span class="variable">$this</span>-&gt;pdo-&gt;query(<span class="variable">$sql</span>);</span><br><span class="line">            <span class="variable">$this</span>-&gt;stmt-&gt;setFetchMode(PDO::FETCH_ASSOC);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span>(PDOException <span class="variable">$e</span>) &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">'SQL语句执行失败！'</span>;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">'失败编号是：'</span> . <span class="variable">$e</span>-&gt;getCode() . <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">'错误原因是：'</span> . <span class="variable">$e</span>-&gt;getMessage() [<span class="number">2</span>] . <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">            <span class="keyword">exit</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 新增方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">db_insert</span><span class="params">(<span class="variable">$sql</span>)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 让SQL执行</span></span><br><span class="line">        <span class="variable">$this</span>-&gt;db_exec(<span class="variable">$sql</span>);</span><br><span class="line">        <span class="comment">// 获取自增长ID</span></span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$this</span>-&gt;pdo-&gt;lastInsertId();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取一条记录</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">db_getOne</span><span class="params">(<span class="variable">$sql</span>)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 执行SQL</span></span><br><span class="line">        <span class="variable">$this</span>-&gt;db_query(<span class="variable">$sql</span>);</span><br><span class="line">        <span class="comment">// 获取记录</span></span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$this</span>-&gt;stmt-&gt;fetch(PDO::FETCH_ASSOC);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取全部记录</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">db_getAll</span><span class="params">(<span class="variable">$sql</span>)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 执行SQL</span></span><br><span class="line">        <span class="variable">$this</span>-&gt;db_query(<span class="variable">$sql</span>);</span><br><span class="line">        <span class="comment">// 获取记录</span></span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$this</span>-&gt;stmt-&gt;fetchAll(PDO::FETCH_ASSOC);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 构造表全名</span><br><span class="line">     * <span class="doctag">@param</span>1	string	$table = '',要构造的表名</span><br><span class="line">     * <span class="doctag">@return</span>	表全名</span><br><span class="line">    */</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">getTable</span><span class="params">(<span class="variable">$table</span> = <span class="string">''</span>)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$table</span>) &#123;</span><br><span class="line">            <span class="comment">//用户已经指定了表名</span></span><br><span class="line">            <span class="keyword">return</span> <span class="variable">$this</span>-&gt;prefix . <span class="variable">$table</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// DB对象的prefix属性+具体类对象的属性table属性</span></span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$this</span>-&gt;prefix . <span class="variable">$this</span>-&gt;table;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/03/Sphinx中文分词/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Sphinx中文分词
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/03/MySQL性能优化的经验分享/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MySQL性能优化的经验分享</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Lian HengKai
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+  <a href="https://github.com/lianhengkai"><img style="position: fixed; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+</body>
+</html>

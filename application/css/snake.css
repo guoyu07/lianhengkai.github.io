@@ -1,0 +1,76 @@
+body{
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+#desk{
+	width:760px;
+	height:560px;
+	margin:20px auto;
+	overflow:hidden;
+	background-image:url('../images/desk.png');
+}
+#map{
+	width:400px;
+	height:400px;
+	position:relative;
+	top:111px;
+	left:288px;
+}
+#start{
+	width:150px;
+	height:58px;
+	position:relative;
+	background-image:url('../images/start.png');
+	top:-20px;
+	left:40px;
+}
+#start:hover{
+	width:150px;
+	height:58px;
+	position:relative;
+	background-image:url('../images/start1.png');
+	top:-20px;
+	left:40px;
+}
+#leave{
+	width:150px;
+	height:58px;
+	position:relative;
+	background-image:url('../images/leave.png');
+	top:-10px;
+	left:40px;
+}
+#score{
+	width:90px;
+	height:40px;
+	position:relative;
+	top:-375px;
+	left:100px;
+	text-align:center;
+}
+#score img{
+	height:30px;
+}
+#level{
+	width:70px;
+	height:40px;
+	position:relative;
+	top:-465px;
+	left:120px;
+	text-align:center;
+}
+#level img{
+	height:30px;
+}
+#message{
+	width:155px;
+	height:100px;
+	position:relative;
+	top:-365px;
+	left:30px;
+	text-align:center;
+	line-height:100px;
+	color:red;
+	border:1px solid #ddd;
+}

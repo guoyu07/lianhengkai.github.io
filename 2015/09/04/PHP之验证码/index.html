@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>PHP之验证码 | Lian HengKai&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="PHP之验证码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP之验证码">
+<meta property="og:url" content="http://yoursite.com/2015/09/04/PHP之验证码/index.html">
+<meta property="og:site_name" content="Lian HengKai's Blog">
+<meta property="og:description" content="PHP之验证码">
+<meta property="og:updated_time" content="2015-11-24T05:36:22.817Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP之验证码">
+<meta name="twitter:description" content="PHP之验证码">
+  
+    <link rel="alternative" href="/atom.xml" title="Lian HengKai&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Lian HengKai</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/应用">应用</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/lianhengkai" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 16.67px;">MySQL</a> <a href="/tags/PDO/" style="font-size: 10px;">PDO</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Smarty/" style="font-size: 11.67px;">Smarty</a> <a href="/tags/Sphinx/" style="font-size: 10px;">Sphinx</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/jQuery/" style="font-size: 13.33px;">jQuery</a> <a href="/tags/应用/" style="font-size: 18.33px;">应用</a> <a href="/tags/电脑/" style="font-size: 10px;">电脑</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Lian HengKai</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Lian HengKai</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/应用">应用</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/lianhengkai" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-PHP之验证码" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/04/PHP之验证码/" class="article-date">
+  	<time datetime="2015-09-04T06:52:23.000Z" itemprop="datePublished">2015-09-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PHP之验证码
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/PHP/">PHP</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="验证码">验证码</h2><blockquote>
+<p>1.什么是验证码?<br>验证码: 一个随机字符串,指的其实只是验证码的内容.<br>验证码是验证码图片的缩写. 是一张在图片中嵌入了随机字符串的技术. 用来区分人和计算机: 人能非常简单的从图片中读取内容,但是计算机很难.  用来防止恶意访问.<br>Captcha : Completely Automated Public Turing Test to Tell Computers and Humans Apart (全自动区分计算机和人类的图灵测试)</p>
+<p>2.验证码的意义?<br>因为验证码的本质是区分人和计算机. 防止有部分人员利用计算机对网站进行恶意访问( 不断的利用非正常数据对网站进行访问: 导致网站因为无效数据进行各种运算, 致资源浪费; 深层次使得正常用户无法有效获得资源进行登录系统 [ 很慢 ])</p>
+</blockquote>
+<p>PHP 默认是不支持图片处理的,需要利用扩展实现. </p>
+<a id="more"></a>
+<h3 id="GD_扩展">GD 扩展</h3><p>GD 扩展是 PHP 提供的图片处理扩展中的一种</p>
+<p>加载 GD 扩展: 在 php.ini 中开启扩展</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">; 加载GD库</span><br><span class="line">extension=php_gd2.dll</span><br></pre></td></tr></table></figure>
+<h3 id="图片处理">图片处理</h3><ul>
+<li>如何获取一个图片?</li>
+</ul>
+<p>制作画布: 才能在画布上进行操作<br>资源 imagecreatetruecolor(宽,高): 创建一张真彩画布(256色)</p>
+<ul>
+<li>如何给图片写入内容?</li>
+</ul>
+<p>调色: 事先准备一种颜色,先将该得到的颜色分配给画布<br>颜色句柄 imagecolorallocate(资源,R,G,B);    //RGB都可以使用数字256色或者十六进制</p>
+<p>画画: 向图片上写入内容( 仅限ascii码表上的字符: 英文字符串)<br>布尔 imagestring(资源,字体大小[1-5],X坐标位置,Y坐标位置,目标内容,颜色句柄)</p>
+<ul>
+<li>如何保存图片?</li>
+</ul>
+<p>两种形式处理图片: 一种将图片直接发送给用户; 另外一种是保存图片<br>imagepng(资源) : 输出图片<br>imagepng(资源,路径): 保存图片 , 路径必须带名字</p>
+<h3 id="制作图片">制作图片</h3><ul>
+<li>制作画布</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//图片制作</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.制作画布</span></span><br><span class="line"><span class="variable">$img</span> = imagecreatetruecolor(<span class="number">100</span>,<span class="number">100</span>);</span><br><span class="line"><span class="comment">//var_dump($img);</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>作画</li>
+</ul>
+<p>a)分配颜色</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2.	作画</span></span><br><span class="line"><span class="comment">//2.1	分配颜色</span></span><br><span class="line"><span class="variable">$color</span> = imagecolorallocate(<span class="variable">$img</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>);</span><br><span class="line">var_dump(<span class="variable">$color</span>);</span><br></pre></td></tr></table></figure>
+<p>b)写入内容</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2.2	写入内容</span></span><br><span class="line"><span class="variable">$res</span> = imagestring(<span class="variable">$img</span>,<span class="number">5</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="string">'hello'</span>,<span class="variable">$color</span>);</span><br><span class="line">var_dump(<span class="variable">$res</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>保存输出</li>
+</ul>
+<p>a)输出</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//3.保存输出</span></span><br><span class="line"><span class="comment">//3.1输出画布</span></span><br><span class="line"><span class="comment">//输出的内容本质上是二进制: 字符,浏览器不会自动当做图片处理</span></span><br><span class="line">header(<span class="string">'Content-type:image/png'</span>);</span><br><span class="line">imagepng(<span class="variable">$img</span>);</span><br></pre></td></tr></table></figure>
+<p>b)保存</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//3.2	保存图片</span></span><br><span class="line">imagepng(<span class="variable">$img</span>,<span class="string">'hello.png'</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>释放资源: 图片资源必须释放(因为图片资源通常很大)<br>imagedestroy(资源)</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//4.	释放资源</span></span><br><span class="line"><span class="variable">$res</span> = imagedestroy(<span class="variable">$img</span>);</span><br><span class="line">var_dump(<span class="variable">$res</span>);</span><br></pre></td></tr></table></figure>
+<p>GD库非常强大,可以制作很多内容, 可以通过操作手册去查询相关函数制作相关图形</p>
+<h3 id="验证码图片">验证码图片</h3><p>得到一张图片, 得到一个随机字符串,把字符串写入到图片上.<br>理论上可以在上面制作图片的代码中将固定hello字符串变成随机生成的字符串即可. 为了更加真实的去实现验证码: 加工</p>
+<ul>
+<li>图片背景加工: 让背景颜色也随机</li>
+</ul>
+<p>– 给图片分配颜色: imagecolorallocate<br>– 填充背景色: 将得到的颜色句柄,去填充整个背景<br>imagefill(资源,起始点X,起始点Y,颜色句柄): 系统会自动去匹配指定点相邻的点,如果颜色与目标点一致,系统就会”传染”</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//背景填充</span></span><br><span class="line"><span class="comment">//分配颜色</span></span><br><span class="line"><span class="variable">$bg</span> = imagecolorallocate(<span class="variable">$img</span>,mt_rand(<span class="number">200</span>,<span class="number">255</span>),mt_rand(<span class="number">200</span>,<span class="number">255</span>),mt_rand(<span class="number">200</span>,<span class="number">255</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//填充背景</span></span><br><span class="line">imagefill(<span class="variable">$img</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="variable">$bg</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>增加干扰线: 在图片中划入一些线段</li>
+</ul>
+<p>– 给图片分配颜色: imagecolorallocate<br>– 画线段: 两点一线<br>imageline(资源,起始点X,起始点Y,终点X,终点Y,颜色句柄)</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//增加干扰线</span></span><br><span class="line"><span class="keyword">for</span>(<span class="variable">$i</span> = <span class="number">0</span>;<span class="variable">$i</span> &lt; <span class="number">10</span>;<span class="variable">$i</span>++)&#123;</span><br><span class="line">	<span class="comment">//分配颜色</span></span><br><span class="line">	<span class="variable">$line</span> = imagecolorallocate(<span class="variable">$img</span>,mt_rand(<span class="number">100</span>,<span class="number">200</span>),mt_rand(<span class="number">100</span>,<span class="number">200</span>),mt_rand(<span class="number">100</span>,<span class="number">200</span>));</span><br><span class="line">	<span class="comment">//制作线段</span></span><br><span class="line">	imageline(<span class="variable">$img</span>,mt_rand(<span class="number">0</span>,<span class="number">100</span>),mt_rand(<span class="number">0</span>,<span class="number">100</span>),mt_rand(<span class="number">0</span>,<span class="number">100</span>),mt_rand(<span class="number">0</span>,<span class="number">100</span>),<span class="variable">$line</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>增加干扰点: 在图片中增加一些颜色与背景色不一致的点</li>
+</ul>
+<p>– 给图片分配颜色<br>– 画点: 一个点<br>imagesetpixel(资源,点X,点Y,颜色句柄)</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//增加干扰点</span></span><br><span class="line"><span class="keyword">for</span>(<span class="variable">$i</span> = <span class="number">0</span>;<span class="variable">$i</span> &lt; <span class="number">1000</span>;<span class="variable">$i</span>++)&#123;</span><br><span class="line">	<span class="comment">//分配颜色</span></span><br><span class="line">	<span class="variable">$pixel</span> = imagecolorallocate(<span class="variable">$img</span>,mt_rand(<span class="number">100</span>,<span class="number">200</span>),mt_rand(<span class="number">100</span>,<span class="number">200</span>),mt_rand(<span class="number">100</span>,<span class="number">200</span>));</span><br><span class="line">	<span class="comment">//制作线段</span></span><br><span class="line">	imagesetpixel(<span class="variable">$img</span>,mt_rand(<span class="number">0</span>,<span class="number">100</span>),mt_rand(<span class="number">0</span>,<span class="number">100</span>),<span class="variable">$pixel</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>产生随机字符串: 字符串获取随机字符串</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//产生随机字符串</span></span><br><span class="line"><span class="variable">$str</span> = <span class="string">'abcdefghijklmnpqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ123456789'</span>;</span><br><span class="line"><span class="variable">$captcha</span> = <span class="string">''</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="variable">$i</span> = <span class="number">0</span>;<span class="variable">$i</span> &lt; <span class="number">5</span>;<span class="variable">$i</span>++)&#123;</span><br><span class="line">	<span class="variable">$captcha</span> .= <span class="variable">$str</span>[mt_rand(<span class="number">0</span>,strlen(<span class="variable">$str</span>) - <span class="number">1</span>)];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//写入图片</span></span><br><span class="line"><span class="variable">$string</span> = imagecolorallocate(<span class="variable">$img</span>,mt_rand(<span class="number">0</span>,<span class="number">100</span>),mt_rand(<span class="number">0</span>,<span class="number">100</span>),mt_rand(<span class="number">0</span>,<span class="number">100</span>));</span><br><span class="line">imagestring(<span class="variable">$img</span>,mt_rand(<span class="number">3</span>,<span class="number">5</span>),mt_rand(<span class="number">10</span>,<span class="number">40</span>),mt_rand(<span class="number">10</span>,<span class="number">50</span>),<span class="variable">$captcha</span>,<span class="variable">$string</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="封装验证码类">封装验证码类</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="comment">//验证码工具类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Captcha</span></span>&#123;</span><br><span class="line">	<span class="comment">//属性</span></span><br><span class="line">	<span class="keyword">private</span> <span class="variable">$width</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="variable">$height</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="variable">$pixels</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="variable">$lines</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="variable">$chars</span>;		<span class="comment">//随机字符串长度</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//构造方法</span></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">(<span class="variable">$arr</span> = array<span class="params">()</span>)</span></span>&#123;</span><br><span class="line">		<span class="comment">//初始化</span></span><br><span class="line">		<span class="variable">$this</span>-&gt;width = <span class="keyword">isset</span>(<span class="variable">$arr</span>[<span class="string">'width'</span>]) ? <span class="variable">$arr</span>[<span class="string">'width'</span>] : <span class="number">150</span>;</span><br><span class="line">		<span class="variable">$this</span>-&gt;height = <span class="keyword">isset</span>(<span class="variable">$arr</span>[<span class="string">'height'</span>]) ? <span class="variable">$arr</span>[<span class="string">'height'</span>] : <span class="number">20</span>;</span><br><span class="line">		<span class="variable">$this</span>-&gt;pixels = <span class="keyword">isset</span>(<span class="variable">$arr</span>[<span class="string">'pixels'</span>]) ? <span class="variable">$arr</span>[<span class="string">'pixels'</span>] : <span class="number">300</span>;</span><br><span class="line">		<span class="variable">$this</span>-&gt;lines = <span class="keyword">isset</span>(<span class="variable">$arr</span>[<span class="string">'lines'</span>]) ? <span class="variable">$arr</span>[<span class="string">'lines'</span>] : <span class="number">5</span>;</span><br><span class="line">		<span class="variable">$this</span>-&gt;chars = <span class="keyword">isset</span>(<span class="variable">$arr</span>[<span class="string">'chars'</span>]) ? <span class="variable">$arr</span>[<span class="string">'chars'</span>] : <span class="number">4</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	 * 制作验证码</span><br><span class="line">	*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">generate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">//制作画布</span></span><br><span class="line">		<span class="variable">$img</span> = imagecreatetruecolor(<span class="variable">$this</span>-&gt;width, <span class="variable">$this</span>-&gt;height);</span><br><span class="line">		<span class="comment">//填充背景</span></span><br><span class="line">		<span class="variable">$bg</span> = imagecolorallocate(<span class="variable">$img</span>, mt_rand(<span class="number">200</span>, <span class="number">255</span>) , mt_rand(<span class="number">200</span>, <span class="number">255</span>) , mt_rand(<span class="number">200</span>, <span class="number">255</span>));</span><br><span class="line">		imagefill(<span class="variable">$img</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="variable">$bg</span>);</span><br><span class="line">		<span class="comment">//写入验证码</span></span><br><span class="line">		<span class="variable">$captcha</span> = <span class="variable">$this</span>-&gt;getCaptcha(<span class="variable">$img</span>);</span><br><span class="line">		<span class="comment">//$captcha = $this-&gt;getChineseCaptcha($img);</span></span><br><span class="line">		<span class="comment">//增加干扰线</span></span><br><span class="line">		<span class="variable">$this</span>-&gt;getLines(<span class="variable">$img</span>);</span><br><span class="line">		<span class="comment">//增加干扰点</span></span><br><span class="line">		<span class="variable">$this</span>-&gt;getPixels(<span class="variable">$img</span>);</span><br><span class="line">		<span class="comment">//输出图片</span></span><br><span class="line">		header(<span class="string">'content-type:image/png'</span>);</span><br><span class="line">		imagepng(<span class="variable">$img</span>);</span><br><span class="line">		<span class="comment">//释放资源</span></span><br><span class="line">		imagedestroy(<span class="variable">$img</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	 * 增加干扰点</span><br><span class="line">	 * <span class="doctag">@param</span>1	resource	$img</span><br><span class="line">	*/</span></span><br><span class="line">	<span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">getPixels</span><span class="params">(<span class="variable">$img</span>)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//增加干扰点</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">0</span>; <span class="variable">$i</span> &lt; <span class="variable">$this</span>-&gt;pixels; <span class="variable">$i</span>++) &#123;</span><br><span class="line">			<span class="comment">//分配颜色</span></span><br><span class="line">			<span class="variable">$pixel</span> = imagecolorallocate(<span class="variable">$img</span>, mt_rand(<span class="number">50</span>, <span class="number">200</span>) , mt_rand(<span class="number">50</span>, <span class="number">200</span>) , mt_rand(<span class="number">50</span>, <span class="number">200</span>));</span><br><span class="line">			<span class="comment">//制作线段</span></span><br><span class="line">			imagesetpixel(<span class="variable">$img</span>, mt_rand(<span class="number">0</span>, <span class="variable">$this</span>-&gt;width) , mt_rand(<span class="number">0</span>, <span class="variable">$this</span>-&gt;height) , <span class="variable">$pixel</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	 * 增加干扰线</span><br><span class="line">	 * <span class="doctag">@param</span>1	resource	$img</span><br><span class="line">	*/</span></span><br><span class="line">	<span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">getLines</span><span class="params">(<span class="variable">$img</span>)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//增加干扰线</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">0</span>; <span class="variable">$i</span> &lt; <span class="variable">$this</span>-&gt;lines; <span class="variable">$i</span>++) &#123;</span><br><span class="line">			<span class="comment">//分配颜色</span></span><br><span class="line">			<span class="variable">$line</span> = imagecolorallocate(<span class="variable">$img</span>, mt_rand(<span class="number">80</span>, <span class="number">220</span>) , mt_rand(<span class="number">80</span>, <span class="number">220</span>) , mt_rand(<span class="number">80</span>, <span class="number">220</span>));</span><br><span class="line">			<span class="comment">//制作线段</span></span><br><span class="line">			imageline(<span class="variable">$img</span>, mt_rand(<span class="number">0</span>, <span class="variable">$this</span>-&gt;width) , mt_rand(<span class="number">0</span>, <span class="variable">$this</span>-&gt;height) , mt_rand(<span class="number">0</span>, <span class="variable">$this</span>-&gt;width) , mt_rand(<span class="number">0</span>, <span class="variable">$this</span>-&gt;height) , <span class="variable">$line</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	 * 写入验证码（随机字符串）</span><br><span class="line">	 * <span class="doctag">@param</span>1	resource	$img</span><br><span class="line">	 * <span class="doctag">@return</span>	string	$captcha</span><br><span class="line">	*/</span></span><br><span class="line">	<span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">getCaptcha</span><span class="params">(<span class="variable">$img</span>)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//产生随即字符串</span></span><br><span class="line">		<span class="variable">$strs</span> = <span class="string">'3456789ABCDEFGHIJKLMNPQRSTUVWXYabcdefghijklmnpqrstuvwxy'</span>;</span><br><span class="line">		<span class="variable">$captcha</span> = <span class="string">''</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="variable">$i</span> = <span class="number">0</span>; <span class="variable">$i</span> &lt; <span class="variable">$this</span>-&gt;chars; <span class="variable">$i</span>++) &#123;</span><br><span class="line">			<span class="variable">$strcolor</span> = imagecolorallocate(<span class="variable">$img</span>, mt_rand(<span class="number">0</span>, <span class="number">120</span>) , mt_rand(<span class="number">0</span>, <span class="number">120</span>) , mt_rand(<span class="number">0</span>, <span class="number">120</span>));</span><br><span class="line">			<span class="variable">$str</span> = <span class="variable">$strs</span>[mt_rand(<span class="number">0</span>, strlen(<span class="variable">$strs</span>) - <span class="number">1</span>) ];</span><br><span class="line">			<span class="variable">$captcha</span>.= <span class="variable">$str</span>;</span><br><span class="line">			<span class="comment">//获取随机位置</span></span><br><span class="line">			<span class="variable">$x_rand</span> = (<span class="variable">$this</span>-&gt;width - imagefontwidth(<span class="number">5</span>) * <span class="variable">$this</span>-&gt;chars) / (<span class="variable">$this</span>-&gt;chars * <span class="number">2</span>);</span><br><span class="line">			<span class="variable">$y_rand</span> = (<span class="variable">$this</span>-&gt;height - imagefontheight(<span class="number">5</span>)) / <span class="number">2</span>;</span><br><span class="line">			<span class="variable">$x</span> = (<span class="variable">$i</span> * <span class="variable">$this</span>-&gt;width / <span class="variable">$this</span>-&gt;chars) + mt_rand(<span class="variable">$x_rand</span>, <span class="variable">$x_rand</span> + <span class="number">5</span>);</span><br><span class="line">			<span class="variable">$y</span> = mt_rand(<span class="variable">$y_rand</span>, <span class="variable">$y_rand</span> + <span class="number">5</span>);</span><br><span class="line">			<span class="comment">//写入验证码</span></span><br><span class="line">			imagestring(<span class="variable">$img</span>, <span class="number">5</span>, <span class="variable">$x</span>, <span class="variable">$y</span>, <span class="variable">$str</span>, <span class="variable">$strcolor</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//将验证码字符串存入到session中</span></span><br><span class="line">		<span class="comment">//session_start();</span></span><br><span class="line">		<span class="variable">$_SESSION</span>[<span class="string">'captcha'</span>] = <span class="variable">$captcha</span>;</span><br><span class="line">		<span class="comment">//file_put_contents('session.txt',$_SESSION['captcha'],FILE_APPEND);</span></span><br><span class="line">		<span class="comment">//返回</span></span><br><span class="line">		<span class="keyword">return</span> <span class="variable">$captcha</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*</span><br><span class="line">	 * 验证验证码</span><br><span class="line">	 * <span class="doctag">@param</span>1 string $captcha用户输入的验证码</span><br><span class="line">	 * <span class="doctag">@return</span> bool,成功返回true,失败返回false</span><br><span class="line">	*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">checkCaptcha</span><span class="params">(<span class="variable">$captcha</span>)</span></span>&#123;</span><br><span class="line">		<span class="comment">//大部分时候,验证码是不区分大小写: 全部转变成大写或者小写再比较</span></span><br><span class="line">		<span class="keyword">return</span> (strtoupper(<span class="variable">$captcha</span>) === strtoupper(<span class="variable">$_SESSION</span>[<span class="string">'captcha'</span>]));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="中文验证码">中文验证码</h2><p>将中文写入到图片而已.<br>整个流程与验证码流程完全一致: 只是在写入数据的时候,中文是不能使用imagestring函数: 必须使用函数: imagettftext<br>imagettftext(资源,字体大小,旋转角度,起始位置X,起始位置Y,颜色句柄,字体,目标字符串);<br>字体: 当前系统所支持的字体: 可以去到C:/windows/fonts</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//中文验证码</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//1.制作画布</span></span><br><span class="line"><span class="variable">$img</span> = imagecreatetruecolor(<span class="number">300</span>,<span class="number">300</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.设置背景</span></span><br><span class="line"><span class="variable">$bg</span> = imagecolorallocate(<span class="variable">$img</span>,mt_rand(<span class="number">200</span>,<span class="number">255</span>),mt_rand(<span class="number">200</span>,<span class="number">255</span>),mt_rand(<span class="number">200</span>,<span class="number">255</span>));</span><br><span class="line">imagefill(<span class="variable">$img</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="variable">$bg</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.写中文</span></span><br><span class="line"><span class="variable">$str</span> = imagecolorallocate(<span class="variable">$img</span>,mt_rand(<span class="number">0</span>,<span class="number">100</span>),mt_rand(<span class="number">0</span>,<span class="number">100</span>),mt_rand(<span class="number">0</span>,<span class="number">100</span>));</span><br><span class="line">imagettftext(<span class="variable">$img</span>,mt_rand(<span class="number">20</span>,<span class="number">50</span>),mt_rand(-<span class="number">45</span>,<span class="number">45</span>),<span class="number">100</span>,<span class="number">120</span>,<span class="variable">$str</span>,<span class="string">'fontA.ttf'</span>,<span class="string">'中'</span>);</span><br><span class="line"></span><br><span class="line">imagettftext(<span class="variable">$img</span>,mt_rand(<span class="number">20</span>,<span class="number">50</span>),mt_rand(-<span class="number">45</span>,<span class="number">45</span>),<span class="number">150</span>,<span class="number">120</span>,<span class="variable">$str</span>,<span class="string">'fontA.ttf'</span>,<span class="string">'国'</span>);</span><br></pre></td></tr></table></figure>
+<p>随机截取汉字字符串(纯汉字): PHP默认的字符串截取是以字节为单位, 凡是进行中文字符串截取都必须根据当前脚本的字符集进行选择性截取: GBK截取2个字节; UTF-8截取3个字节</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//中文字符串</span></span><br><span class="line"><span class="variable">$string</span> = <span class="string">'我们过了江进了车站我买票他忙着照看行李行李太多得向脚夫行些小费才可过去他便又忙着和他们讲价钱我那时真是聪明过分总觉他说话不大漂亮非自己插嘴不可但他终于讲定了价钱就送我上车他给我拣定了靠车门的一张椅子我将他给我做的紫毛大衣铺好座位他嘱我路上小心夜里要警醒些不要受凉又嘱托茶房好好照应我我心里暗笑他的迂他们只认得钱托他们只是白托而且我这样大年纪的人难道还不能料理自己么我现在想想我那时真是太聪明了'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//截取中文</span></span><br><span class="line"><span class="variable">$pos</span> = mt_rand(<span class="number">0</span>,strlen(<span class="variable">$string</span>) - <span class="number">1</span>);</span><br><span class="line"><span class="comment">//将位置编程每个对应汉字的起始位置</span></span><br><span class="line"><span class="variable">$pos</span> = <span class="variable">$pos</span> - <span class="variable">$pos</span>%<span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//截取字符串</span></span><br><span class="line"><span class="variable">$rand</span> = substr(<span class="variable">$string</span>,<span class="variable">$pos</span>,<span class="number">3</span>);	<span class="comment">//当前字符集为utf-8</span></span><br></pre></td></tr></table></figure>
+<h2 id="ThinkPHP中的验证码">ThinkPHP中的验证码</h2><p>在3.1之前版本中可以通过如下方式实现验证码：<br>import(‘ORG.Util.Image’);<br>Image::buildImageVerify();</p>
+<p>这里讲的是3.2版本</p>
+<h3 id="生成验证码">生成验证码</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$Verify</span> = <span class="keyword">new</span> \Think\Verify();</span><br><span class="line"><span class="variable">$Verify</span>-&gt;entry();</span><br></pre></td></tr></table></figure>
+<h3 id="验证码参数">验证码参数</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>expire</td>
+<td>验证码的有效期（秒）</td>
+</tr>
+<tr>
+<td>useImgBg</td>
+<td>是否使用背景图片,默认为false</td>
+</tr>
+<tr>
+<td>fontSize</td>
+<td>验证码字体大小（像素）,默认为25</td>
+</tr>
+<tr>
+<td>useCurve</td>
+<td>是否使用混淆曲线,默认为true</td>
+</tr>
+<tr>
+<td>useNoise</td>
+<td>是否添加杂点,默认为true</td>
+</tr>
+<tr>
+<td>imageW</td>
+<td>验证码宽度,设置为0为自动计算</td>
+</tr>
+<tr>
+<td>imageH</td>
+<td>验证码高度,设置为0为自动计算</td>
+</tr>
+<tr>
+<td>length</td>
+<td>验证码位数</td>
+</tr>
+<tr>
+<td>fontttf</td>
+<td>指定验证码字体,默认为随机获取</td>
+</tr>
+<tr>
+<td>useZh</td>
+<td>是否使用中文验证码</td>
+</tr>
+<tr>
+<td>bg</td>
+<td>验证码背景颜色,rgb数组设置,例如 array(243, 251, 254)</td>
+</tr>
+<tr>
+<td>seKey</td>
+<td>验证码的加密密钥</td>
+</tr>
+</tbody>
+</table>
+<p>参数设置使用两种方式。</p>
+<p>实例化传入参数：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$config</span> = <span class="keyword">array</span>(    </span><br><span class="line">	<span class="string">'fontSize'</span>    =&gt;    <span class="number">30</span>,    <span class="comment">// 验证码字体大小    </span></span><br><span class="line">	<span class="string">'length'</span>      =&gt;    <span class="number">3</span>,     <span class="comment">// 验证码位数    </span></span><br><span class="line">	<span class="string">'useNoise'</span>    =&gt;    <span class="keyword">false</span>, <span class="comment">// 关闭验证码杂点</span></span><br><span class="line">);</span><br><span class="line"><span class="variable">$Verify</span> = <span class="keyword">new</span> \Think\Verify(<span class="variable">$config</span>);</span><br><span class="line"><span class="variable">$Verify</span>-&gt;entry();</span><br></pre></td></tr></table></figure>
+<p>或者采用动态设置的方式，如：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$Verify</span> = <span class="keyword">new</span> \Think\Verify();</span><br><span class="line"><span class="variable">$Verify</span>-&gt;fontSize = <span class="number">30</span>;</span><br><span class="line"><span class="variable">$Verify</span>-&gt;length   = <span class="number">3</span>;</span><br><span class="line"><span class="variable">$Verify</span>-&gt;useNoise = <span class="keyword">false</span>;</span><br><span class="line"><span class="variable">$Verify</span>-&gt;entry();</span><br></pre></td></tr></table></figure>
+<h3 id="验证码字体">验证码字体</h3><p>默认情况下，验证码的字体是随机使用<code>ThinkPHP/Library/Think/Verify/ttfs/</code>目录下面的字体文件，我们可以指定验证码的字体，例如：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$Verify</span> =  <span class="keyword">new</span> \Think\Verify(); </span><br><span class="line"><span class="comment">// 验证码字体使用 ThinkPHP/Library/Think/Verify/ttfs/5.ttf</span></span><br><span class="line"><span class="variable">$Verify</span>-&gt;fontttf = <span class="string">'5.ttf'</span>;</span><br><span class="line"><span class="variable">$Verify</span>-&gt;entry();</span><br></pre></td></tr></table></figure>
+<h3 id="背景图片">背景图片</h3><p>支持验证码背景图片功能，可以如下设置：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$Verify</span> = <span class="keyword">new</span> \Think\Verify();</span><br><span class="line"><span class="comment">// 开启验证码背景图片功能 随机使用 ThinkPHP/Library/Think/Verify/bgs 目录下面的图片</span></span><br><span class="line"><span class="variable">$Verify</span>-&gt;useImgBg = <span class="keyword">true</span>;</span><br><span class="line"><span class="variable">$Verify</span>-&gt;entry();</span><br></pre></td></tr></table></figure>
+<h3 id="中文验证码-1">中文验证码</h3><p>如果要使用中文验证码，可以设置：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$Verify</span> = <span class="keyword">new</span> \Think\Verify();</span><br><span class="line"><span class="comment">// 验证码字体使用 ThinkPHP/Library/Think/Verify/ttfs/5.ttf</span></span><br><span class="line"><span class="variable">$Verify</span>-&gt;useZh = <span class="keyword">true</span>;</span><br><span class="line"><span class="variable">$Verify</span>-&gt;entry();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果无法正常显示，请确认你的 ThinkPHP/Library/Think/Verify/zhttfs/ 目录下面存在中文字体文件。</p>
+</blockquote>
+<h3 id="验证码检测">验证码检测</h3><p>可以用Think\Verify类的<code>check</code>方法检测验证码的输入是否正确，例如，下面是封装的一个验证码检测的函数：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 检测输入的验证码是否正确，$code为用户输入的验证码字符串</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">check_verify</span><span class="params">(<span class="variable">$code</span>, <span class="variable">$id</span> = <span class="string">''</span>)</span></span>&#123;    </span><br><span class="line">	<span class="variable">$verify</span> = <span class="keyword">new</span> \Think\Verify();    </span><br><span class="line">	<span class="keyword">return</span> <span class="variable">$verify</span>-&gt;check(<span class="variable">$code</span>, <span class="variable">$id</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/04/PHP之无限极分类/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          PHP之无限极分类
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/03/Sphinx中文分词/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Sphinx中文分词</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Lian HengKai
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+  <a href="https://github.com/lianhengkai"><img style="position: fixed; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+</body>
+</html>

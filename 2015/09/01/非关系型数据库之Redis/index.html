@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>非关系型数据库之Redis | Lian HengKai&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="非关系型数据库之Redis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="非关系型数据库之Redis">
+<meta property="og:url" content="http://yoursite.com/2015/09/01/非关系型数据库之Redis/index.html">
+<meta property="og:site_name" content="Lian HengKai's Blog">
+<meta property="og:description" content="非关系型数据库之Redis">
+<meta property="og:updated_time" content="2015-11-24T03:14:29.670Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="非关系型数据库之Redis">
+<meta name="twitter:description" content="非关系型数据库之Redis">
+  
+    <link rel="alternative" href="/atom.xml" title="Lian HengKai&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Lian HengKai</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/应用">应用</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/lianhengkai" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 16.67px;">MySQL</a> <a href="/tags/PDO/" style="font-size: 10px;">PDO</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Smarty/" style="font-size: 11.67px;">Smarty</a> <a href="/tags/Sphinx/" style="font-size: 10px;">Sphinx</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/jQuery/" style="font-size: 13.33px;">jQuery</a> <a href="/tags/应用/" style="font-size: 18.33px;">应用</a> <a href="/tags/电脑/" style="font-size: 10px;">电脑</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Lian HengKai</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Lian HengKai</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/应用">应用</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/lianhengkai" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-非关系型数据库之Redis" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/01/非关系型数据库之Redis/" class="article-date">
+  	<time datetime="2015-09-01T12:52:23.000Z" itemprop="datePublished">2015-09-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      非关系型数据库之Redis
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Redis/">Redis</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="NoSQL_的讲解">NoSQL 的讲解</h2><h3 id="NoSQL_(NoSQL_=_Not_Only_SQL)介绍">NoSQL (NoSQL = Not Only SQL)介绍</h3><p>NoSQL 是以 key-value 形式存储，和传统的关系型数据库不一样，不一定遵循传统数据库的一些基本要求，比如说遵循 sql 标准、ACID 属性、表结果等等，这类数据库主要有以下特点：非关系型的、分布式的，开源的，水平可扩展的。</p>
+<a id="more"></a>
+<h3 id="NoSQL_的优缺点">NoSQL 的优缺点</h3><ul>
+<li><p>优点：<br>– 高并发读写的性能<br>– 大数据量的扩展（分布式存储）<br>– 配置简单<br>– 灵活、高效的操作与数据模型<br>– 低廉的成本</p>
+</li>
+<li><p>不足之处：<br>– 没有统一的标准<br>– 没有正式的官方支持<br>– 各种产品还不算成熟</p>
+</li>
+</ul>
+<h3 id="NoSQL_使用场景">NoSQL 使用场景</h3><ul>
+<li>对数据高并发读写</li>
+<li>对海量数据的高效率存储和访问</li>
+<li>对数据的高扩展性和高可用性</li>
+</ul>
+<h2 id="Redis_讲解">Redis 讲解</h2><h3 id="什么是_Redis">什么是 Redis</h3><p>Redis 是 Remote Dictionary Server (远程数据服务)的缩写<br>由意大利人 antirez(Salvatore Sanfilippo) 开发的一款 内存高速缓存数据库<br>该软件使用 C 语言编写,它的数据模型为 key-value<br>它支持丰富的数据结构，比如 String  list  hash   set  sorted set。<br>可持久化，保证了数据安全。</p>
+<h3 id="Redis_与_Memcache_比较">Redis 与 Memcache 比较</h3><ol>
+<li>数据类型: memcache 支持的数据类型就是字符串，redis 支持的数据类型有字符串，哈希，链表，集合，有序集合。</li>
+<li>持久化：memcache 数据是存储到内存里面，一旦断电，或重启，则数据丢失。redis 数据也是存储到内存里面的，但是可以持久化，周期性的把数据给保存到硬盘里面，导致重启，或断电不会丢失数据。</li>
+<li>数据量：memcahce 一个键存储的数据最大是 1 M ,而 redis 的一个键值，存储的最大数据量是 1 G 的数据量。</li>
+</ol>
+<h2 id="安装">安装</h2><h3 id="软件下载解压">软件下载解压</h3><p>Redis 的官方下载站是：<a href="http://redis.io/download" target="_blank" rel="external">http://redis.io/download</a></p>
+<p>命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf redis-<span class="number">2.4</span>.<span class="number">17</span>.tar.gz</span><br></pre></td></tr></table></figure>
+<h3 id="执行具体的安装">执行具体的安装</h3><p>1.进入到解压目录<br>命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> redis-<span class="number">2.4</span>.<span class="number">17</span></span><br></pre></td></tr></table></figure>
+<p>2.执行 make（注意：没有 configure 步骤）<br>命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
+<p>安装注意：<br>如果在执行 make 时出现错误。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uname -m</span><br><span class="line">make CFLAGS=<span class="string">"-march=i686"</span></span><br></pre></td></tr></table></figure>
+<p>make配置参数，可以使得生成的二进制代码是符号当前 cpu 型号的，最优化的二进制代码。</p>
+<p>3.可以使用 make … install 中间调价一个参数指定安装目录<br>命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make PREFIX=/usr/<span class="built_in">local</span>/redis install</span><br></pre></td></tr></table></figure>
+<p>安装成功后，在 redis 的 bin 目录下面生成如下几个文件：</p>
+<blockquote>
+<p>redis-benchmark ：是性能检测工具<br>redis-check-aof 和 redis-check-dump ：是日志检测工具（对同步的文件进行检测）<br>redis-server ：是服务器启动的程序命令<br>redis-cli ：是客户端连接的程序命令</p>
+</blockquote>
+<h3 id="从解压目录里面，复制配置文件到安装目录">从解压目录里面，复制配置文件到安装目录</h3><p>命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp redis.conf /usr/<span class="built_in">local</span>/redis/</span><br></pre></td></tr></table></figure>
+<h3 id="修改配置文件，让_redis_服务在后台执行">修改配置文件，让 redis 服务在后台执行</h3><p>使用 vi 打开配置文件</p>
+<p>命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/<span class="built_in">local</span>/redis/redis.conf</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>找到 daemonize no，由原来的 no 改为 yes，让 redis 进程在后台执行。</p>
+</blockquote>
+<h3 id="启动_redis_服务">启动 redis 服务</h3><p>进入到 redis 的安装目录的 bin 目录<br>语法：<br><code>redis-server 配置文件</code><br>命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/redis/bin</span><br><span class="line">./redis-server ../redis.conf</span><br></pre></td></tr></table></figure>
+<p>redis 服务的默认端口是 6379，查看端口是否启动：<br>命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tunpl | grep <span class="number">6379</span></span><br></pre></td></tr></table></figure>
+<p>关闭服务：</p>
+<p>语法：<code>pkill 服务名</code><br>命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkill redis-server</span><br></pre></td></tr></table></figure>
+<h3 id="客户端连接">客户端连接</h3><p>语法：<code>redis-cli -h 主机名 -p 端口号</code><br>如果是本机，是默认端口，则直接运行 redis-cli 即可。<br>命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./redis-cli</span><br></pre></td></tr></table></figure>
+<h2 id="redis_的数据类型">redis 的数据类型</h2><p>redis 是一个 key-value 存储系统</p>
+<h3 id="string_类型">string 类型</h3><p>同 memcache 是一样的。比如：<code>name xiaolong</code><br>String 是最简单的类型，一个 key 对应一个 Value ，String 类型是二进制安全的。Redis 的 string 可以包含任何数据，比如 jpg 图片或者序列化的对象。</p>
+<h3 id="hash_类型">hash 类型</h3><p>Redis hash 是一个 string 类型的 field 和 value 的映射表。<br>哈希的值又是键值对：field value<br><code>key(哈希名称) field1 value1 field2 value2</code><br>比如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user:id name xiaolong age <span class="number">12</span></span><br></pre></td></tr></table></figure>
+<h3 id="list_类型">list 类型</h3><p>就是一个没有底的容器，可以模拟栈和队列<br>模拟栈：<br>比如当前我们从头部添加元素，我们取出元素时，是从头部取出的。是先进后出。可以模拟栈。<br>模拟队列：<br>比如当前我们从尾部添加数据，我们取出数据仍然是从头部开始取出数据，先进先出，模拟的是队列</p>
+<h3 id="set_集合">set 集合</h3><p>集合的类型，和我们数学里面的集合的概念是类似的。<br>应用：比如求两个集合的并集，交集（共同好友），差集（推荐好友）</p>
+<h3 id="sort_set_有序集合">sort set 有序集合</h3><p>给集合里面的元素添加一个序号，形成有序集合</p>
+<h2 id="redis_数据类型的操作讲解">redis 数据类型的操作讲解</h2><h3 id="string_类型-1">string 类型</h3><p>set ：添加字符串数据<br>语法：<code>set 键（字符串名称） 值</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> name xiaolong</span><br></pre></td></tr></table></figure>
+<p>get:获取字符串的键值<br>语法：<code>get 键</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get name</span><br></pre></td></tr></table></figure>
+<p>setnx ：在设置键值时，要判断改键是否存在，如果已经存在，则设置不成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setnx name xiaoliu</span><br></pre></td></tr></table></figure>
+<p>setex ：在设置键值时，指定有效期<br>语法：<code>setex 键（字符串名称） 有效期（秒数） 值</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setex color <span class="number">10</span> red</span><br></pre></td></tr></table></figure>
+<p>mset ：一次性设置多个键值<br>语法：<code>mset 键1 值1 键2 值2 ...</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mset name xiaolong age <span class="number">12</span> email xiaolong@souhu.com</span><br></pre></td></tr></table></figure>
+<p>mget ：一次性获取多个键值<br>语法：<code>mget 键1 键2 ...</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mget name age email</span><br></pre></td></tr></table></figure>
+<p>incr ：执行自增运算<br>语法：<code>incr 键</code><br>注意：该键可以不存在，若不存在，则自动创建，初始值为 0</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">incr number</span><br></pre></td></tr></table></figure>
+<p>incrby ：执行自增运算，可以加指定的数值的操作</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">incrby number <span class="number">100</span></span><br></pre></td></tr></table></figure>
+<h3 id="哈希的操作">哈希的操作</h3><p>hset ：设置哈希的键值<br>语法：<code>hset 键（哈希的名称） field value</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hset ha1 name xiaolong</span><br></pre></td></tr></table></figure>
+<p>hget ：获取哈希里面 field 的值<br>语法：<code>hget 键（哈希的名称） field</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hget ha1 name</span><br></pre></td></tr></table></figure>
+<p>hmset ：一次性设置哈希的多个 field 和 value<br>语法：<code>hmset 键（哈希的名称） field1 value1 field2 value2 ...</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hmset ha2 name xiaowanzi age <span class="number">18</span> sex nan</span><br></pre></td></tr></table></figure>
+<p>hmget ：一次性获取哈希的多个 field 的值<br>语法：<code>hmget 键（哈希的名称） field1 field2 ...</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hmget ha2 name age</span><br></pre></td></tr></table></figure>
+<p>hlen ：返回哈希里面 field 的个数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hlen ha2</span><br></pre></td></tr></table></figure>
+<p>hdel ：删除哈希里面指定的 field<br>语法：<code>hdel 键（哈希的名称） 指定的field</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hdel ha2 name</span><br></pre></td></tr></table></figure>
+<p>hgetall ：返回哈希里面所有的 field 和 value<br>语法：<code>hgetall 键（哈希的名称）</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hgetall ha2</span><br></pre></td></tr></table></figure>
+<h3 id="链表结构的操作">链表结构的操作</h3><p>lpush ：从头部向链表中添加元素<br>语法：<code>lpush 键（链表的名称） 元素</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lpush list1 luocheng</span><br></pre></td></tr></table></figure>
+<p>lrange ：获取链表里面的元素<br>语法：<code>lrange 键（链表的名称） 键 开始小标 结束小标（如果为-1则是到链表的尾部）</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lrange list1 <span class="number">0</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>rpush ：从链表的尾部添加元素<br>语法：<code>rpush 键（链表的名称） 元素</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpush list1 weizheng</span><br></pre></td></tr></table></figure>
+<p>lrem ：删除链表中指定的元素<br>语法：<code>lrem 键（链表的名称） 个数（指定删除的个数） 要删除的元素</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lrem list1 <span class="number">1</span> weizheng</span><br></pre></td></tr></table></figure>
+<p>ltrim ：保留链表中指定范围的元素<br>语法：<code>ltrim 键（链表的名称） 开始下表 结束下标</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ltrim list1 <span class="number">1</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>lpop ：从头部删除一个元素<br>语法：<code>lpop 键（链表的名称）</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lpop list1</span><br></pre></td></tr></table></figure>
+<p>lindex ：返回链表中指定下标的元素<br>语法：<code>lindex 键（链表的名称） 下标</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lindex list1 <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h3 id="集合的操作">集合的操作</h3><p>sadd ：向集合里面添加元素<br>语法：<code>sadd 键（集合的名称） 元素</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sadd <span class="built_in">set</span>1 songjiang</span><br></pre></td></tr></table></figure>
+<p>smembers ：返回集合里面的元素<br>语法：<code>smembers 键（集合的名称）</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smembers <span class="built_in">set</span>1</span><br></pre></td></tr></table></figure>
+<p>srem ：删除集合里面指定的元素<br>语法：<code>srem 键（集合的名称）指定删除的元素</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">srem <span class="built_in">set</span>1 songjiang</span><br></pre></td></tr></table></figure>
+<p>sdiff ：返回给定集合的差集，即返回集合1中不存在于集合2的元素</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sdiff <span class="built_in">set</span>1 <span class="built_in">set</span>2</span><br></pre></td></tr></table></figure>
+<p>sinter ：返回给定集合中的元素的交集<br>语法：<code>sinter 集合1 集合2</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sinter <span class="built_in">set</span>1 <span class="built_in">set</span>2</span><br></pre></td></tr></table></figure>
+<p>sunion ：返回给定集合中的元素的并集<br>语法：<code>sunion 集合1 集合2</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sunion <span class="built_in">set</span>1 <span class="built_in">set</span>2</span><br></pre></td></tr></table></figure>
+<p>scard：返回集合中元素的个数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scard <span class="built_in">set</span>1</span><br></pre></td></tr></table></figure>
+<p>sismember：判断某个元素是否在该集合中<br>语法：<code>sismember 键（集合的名称） 元素</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sismember <span class="built_in">set</span>2 wangwu</span><br></pre></td></tr></table></figure>
+<h3 id="有序集合的操作">有序集合的操作</h3><h3 id="常用的其他命令">常用的其他命令</h3><p>keys：返回当前数据库里面的键（可以使用通配符，返回满足条件的键）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">keys *			<span class="comment">#返回当前数据库里所有的键</span></span><br><span class="line">keys s*			<span class="comment">#返回当前数据库里s开头的键</span></span><br></pre></td></tr></table></figure>
+<p>exists：检测一个键是否存在<br>语法：<code>exists 键名，存在返回1，不存在返回0</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exists ha1</span><br></pre></td></tr></table></figure>
+<p>del：删除指定的键<br>语法：<code>del 键名</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del name</span><br></pre></td></tr></table></figure>
+<p>expire：设置一个键的有效期<br>语法：<code>expire 键名 秒数</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expire name <span class="number">10</span></span><br></pre></td></tr></table></figure>
+<p>ttl：查看键还有多长时间失效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ttl name</span><br></pre></td></tr></table></figure>
+<p>type：返回键的数据类型<br>语法：<code>type 键名</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span> age</span><br></pre></td></tr></table></figure>
+<p>select：选择数据库，在redis里面默认有16个数据库，编号为0-15，默认是进入0号数据库。<br>语法：<code>select 数据库编号</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>dbsize：查看当前数据库的键的数量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dbsize</span><br></pre></td></tr></table></figure>
+<p>flushdb：删除当前数据库里面的所有的键</p>
+<p>flushall：删除所有数据库里面的所有键</p>
+<h2 id="redis里面的安全机制（认证机制）">redis里面的安全机制（认证机制）</h2><h3 id="设置redis服务的密码">设置redis服务的密码</h3><p>设置客户端连接后进行任何其他操作前需要使用的密码。<br>注意：因为 redis速度相当快，所以在一台比较好的服务器下，一个外部的用户可以在一秒钟进行150k次的密码尝试，这意味着你需要指定非常非常强大的密码来防止暴力破解。<br>设置密码的方式：通过配置文件来完成。<br>使用vim打开配置文件：<br>命令：<code>vim redis.conf</code></p>
+<p>找到 <code># requirepass foobared</code> ，然后把前面的 # 号去掉，开启该选项，设置密码。比如 <code>requirepass 123</code> , <code>123</code> 就是当前我们要设置的密码。该密码是明文显示的，要注意对 redis.conf 文件的权限设置要严格。<br>密码设置完成后，要重启 redis 服务。</p>
+<h3 id="客户端验证">客户端验证</h3><p>有两种方式来完成验证<br>方式一：在客户端登录 redis 服务时进行验证，使用 “-a 密码”<br>命令：<code>redis-cli -a 123</code><br>方式二：客户端登录后，直接使用 auth 命令来完成验证<br>命令：<code>auth 123</code></p>
+<h2 id="php_操作_redis">php 操作 redis</h2><h3 id="安装_redis_的扩展">安装 redis 的扩展</h3><ol>
+<li>在安装扩展时，要注意和当前 php 的版本要一致，编译的软件的版本要一致，线程是否安全的。编译软件有 vc6 或 vc9， nts (线程非安全的)或 ts (线程安全的)<br>注：如何查看自己的 php 版本是 vc 几的，是 nts 还是 ts 的？（通过 phpinfo 函数）<br>如果 php 的版本是 5.4 系列的，则需要两个扩展文件（ php_igbinary.dll 和 php_redis.dll ）</li>
+<li>把准备好的扩展文件，拷贝到 php 的安装目录，ext</li>
+<li>打开 php.ini 文件，加载扩展文件<br>如果 php 版本是 5.4 系列的，要加载两个扩展<br>extension=php_igbinary.dll<br>extension=php_redis.dll<br>注意：extension=php_igbinary.dll一定要放在extension=php_redis.dll的前面，否则此扩展不会生效。<h3 id="入门案例使用">入门案例使用</h3></li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="variable">$redis</span> = <span class="keyword">new</span> Redis();</span><br><span class="line"><span class="variable">$redis</span>-&gt;connect(<span class="string">'192.168.22.36'</span>, <span class="number">6379</span>);</span><br><span class="line"><span class="variable">$redis</span>-&gt;auth(<span class="string">'123'</span>);</span><br><span class="line"><span class="comment">// 添加一个字符串类型</span></span><br><span class="line"><span class="variable">$redis</span>-&gt;set(<span class="string">'username'</span>, <span class="string">'xiaomei'</span>);</span><br><span class="line"><span class="comment">// 添加一个哈希类型</span></span><br><span class="line"><span class="variable">$redis</span>-&gt;hmset(<span class="string">"ha1"</span>,<span class="keyword">array</span>(<span class="string">'name'</span> =&gt; <span class="string">'xiaorenwu'</span>, <span class="string">'age'</span> =&gt; <span class="number">12</span>));</span><br><span class="line"><span class="comment">// 添加一个集合类型</span></span><br><span class="line"><span class="variable">$redis</span>-&gt;sadd(<span class="string">'set1'</span>, <span class="string">'chengyaojin'</span>);</span><br><span class="line"><span class="comment">// 添加一个链表类型</span></span><br><span class="line"><span class="variable">$redis</span>-&gt;lpush(<span class="string">'list1'</span>, <span class="string">'yangguang'</span>);</span><br><span class="line"><span class="comment">// 获取字符串类型数据</span></span><br><span class="line">var_dump(<span class="variable">$redis</span>-&gt;get(<span class="string">'username'</span>));</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line"><span class="comment">// 获取哈希类型数据</span></span><br><span class="line">var_dump(<span class="variable">$redis</span>-&gt;hgetall(<span class="string">'ha1'</span>));</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line"><span class="comment">// 获取链表类型数据</span></span><br><span class="line">var_dump(<span class="variable">$redis</span>-&gt;lrange(<span class="string">'list1'</span>, <span class="number">0</span>, -<span class="number">1</span>));</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line"><span class="comment">// 获取集合类型数据</span></span><br><span class="line">var_dump(<span class="variable">$redis</span>-&gt;smembers(<span class="string">'set1'</span>));</span><br><span class="line"><span class="preprocessor">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="高级案例">高级案例</h2><ul>
+<li>用户的注册</li>
+<li>用户的登录</li>
+<li>用户信息的分页</li>
+<li>添加用户信息的关注，好友关系</li>
+</ul>
+<p><code>register.php：用户注册页面</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;用户注册页面&lt;/h1&gt;</span><br><span class="line">&lt;form action=<span class="string">"action.php?act=reg"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">用户名：&lt;input type=<span class="string">"text"</span> name=<span class="string">"username"</span> /&gt;&lt;br /&gt;</span><br><span class="line">密  码：&lt;input type=<span class="string">"password"</span> name=<span class="string">"password"</span> /&gt;&lt;br /&gt;</span><br><span class="line">年  龄：&lt;input type=<span class="string">"text"</span> name=<span class="string">"age"</span> /&gt;&lt;br /&gt;</span><br><span class="line">&lt;input type=<span class="string">"submit"</span> value=<span class="string">"注册"</span> /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><code>login.php：用户登录页面</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;用户登录页面&lt;/h1&gt;</span><br><span class="line">&lt;form action=<span class="string">"action.php?act=login"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">用户名：&lt;input type=<span class="string">"text"</span> name=<span class="string">"username"</span> /&gt;&lt;br /&gt;</span><br><span class="line">密  码：&lt;input type=<span class="string">"password"</span> name=<span class="string">"password"</span> /&gt;&lt;br /&gt;</span><br><span class="line">&lt;input type=<span class="string">"submit"</span> value=<span class="string">"登录"</span> /&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p><code>redis.php：公用连接redis的文件</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="variable">$redis</span> = <span class="keyword">new</span> Redis();</span><br><span class="line"><span class="variable">$redis</span>-&gt;connect(<span class="string">'192.168.22.36'</span>, <span class="number">6379</span>);</span><br><span class="line"><span class="variable">$redis</span>-&gt;auth(<span class="string">'123'</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>action.php：处理各种请求</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line">header(<span class="string">'content-type:text/html; charset=utf-8'</span>);</span><br><span class="line"><span class="keyword">require</span> <span class="string">'redis.php'</span>;</span><br><span class="line"><span class="variable">$act</span> = <span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">'act'</span>]) ? <span class="variable">$_GET</span>[<span class="string">'act'</span>] : <span class="string">''</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$act</span> == <span class="string">'reg'</span>)&#123;</span><br><span class="line">	<span class="comment">// 处理用户注册</span></span><br><span class="line">	<span class="comment">// 把用户的信息存储到哈希里面。哈希的键如何设置。</span></span><br><span class="line">	<span class="variable">$id</span> = <span class="variable">$redis</span>-&gt;incr(<span class="string">'uid'</span>);</span><br><span class="line">	<span class="variable">$key</span> = <span class="string">"user:id"</span> . <span class="variable">$id</span>;</span><br><span class="line">	<span class="variable">$username</span> = trim(<span class="variable">$_POST</span>[<span class="string">'username'</span>]);</span><br><span class="line">	<span class="variable">$password</span> = trim(<span class="variable">$_POST</span>[<span class="string">'password'</span>]);</span><br><span class="line">	<span class="variable">$age</span> = trim(<span class="variable">$_POST</span>[<span class="string">'age'</span>]);</span><br><span class="line"></span><br><span class="line">	<span class="variable">$redis</span>-&gt;hmset(<span class="variable">$key</span>, <span class="keyword">array</span>(<span class="string">'uid'</span> =&gt; <span class="variable">$id</span>, <span class="string">'username'</span> =&gt; <span class="variable">$username</span>, <span class="string">'password'</span> =&gt; <span class="variable">$password</span>, <span class="string">'age'</span> =&gt; <span class="variable">$age</span>));</span><br><span class="line">	<span class="comment">// 把注册的用户的id存储到链表里面，用于计算注册用户的数量，如果该用户删除时，则链表中也删除该的id</span></span><br><span class="line">	<span class="variable">$redis</span>-&gt;lpush(<span class="string">"userid"</span>, <span class="variable">$id</span>);</span><br><span class="line">	<span class="comment">// 根据用户名，来构造一个字符串的键，该字符串存储用户的id</span></span><br><span class="line">	<span class="variable">$redis</span>-&gt;set(<span class="string">"username:"</span> . <span class="variable">$username</span>, <span class="variable">$id</span>);</span><br><span class="line">	header(<span class="string">'location:index.php'</span>);</span><br><span class="line">&#125;<span class="keyword">elseif</span>(<span class="variable">$act</span> == <span class="string">'login'</span>)&#123;</span><br><span class="line">	<span class="comment">// 处理用户的登录</span></span><br><span class="line">	<span class="variable">$username</span> = trim(<span class="variable">$_POST</span>[<span class="string">'username'</span>]);</span><br><span class="line">	<span class="variable">$password</span> = trim(<span class="variable">$_POST</span>[<span class="string">'password'</span>]);</span><br><span class="line">	<span class="comment">// 如何来验证登录成功呢？</span></span><br><span class="line">	<span class="comment">// 思路：要找出哈希里面的password</span></span><br><span class="line">	<span class="variable">$id</span> = <span class="variable">$redis</span>-&gt;get(<span class="string">"username:"</span> . <span class="variable">$username</span>); <span class="comment">// 如果找到则返回当前登录用户的id</span></span><br><span class="line">	<span class="keyword">if</span>(!<span class="variable">$id</span>)&#123;</span><br><span class="line">		<span class="comment">// 没有找到</span></span><br><span class="line">		<span class="keyword">die</span>(<span class="string">'用户名错误，或该用户不存在'</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 根据id拼接哈希的键</span></span><br><span class="line">	<span class="variable">$key</span> = <span class="string">"user:id"</span> . <span class="variable">$id</span>;</span><br><span class="line">	<span class="variable">$pass</span> = <span class="variable">$redis</span>-&gt;hget(<span class="variable">$key</span>, <span class="string">'password'</span>); <span class="comment">// 返回之前存储的密码</span></span><br><span class="line">	<span class="keyword">if</span>(<span class="variable">$pass</span> == <span class="variable">$password</span>)&#123;</span><br><span class="line">		<span class="comment">// 登录成功</span></span><br><span class="line">		session_start();</span><br><span class="line">		<span class="variable">$_SESSION</span>[<span class="string">'username'</span>] = <span class="variable">$username</span>;</span><br><span class="line">		<span class="variable">$_SESSION</span>[<span class="string">'uid'</span>] = <span class="variable">$id</span>;</span><br><span class="line">		header(<span class="string">'location:index.php'</span>);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">die</span>(<span class="string">'用户名或密码错误'</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;<span class="keyword">elseif</span>(<span class="variable">$act</span> == <span class="string">'guan'</span>)&#123;</span><br><span class="line">	<span class="variable">$ided</span> = <span class="variable">$_GET</span>[<span class="string">'id'</span>]; <span class="comment">// 被关注的id</span></span><br><span class="line">	session_start();</span><br><span class="line">	<span class="variable">$ownid</span> = <span class="variable">$_SESSION</span>[<span class="string">'uid'</span>]; <span class="comment">// 取出自己的id</span></span><br><span class="line">	<span class="comment">// 构造自己关注别人的集合</span></span><br><span class="line">	<span class="variable">$key</span> = <span class="string">"guan:"</span> . <span class="variable">$ownid</span>;</span><br><span class="line">	<span class="variable">$redis</span>-&gt;sadd(<span class="variable">$key</span>, <span class="variable">$ided</span>);</span><br><span class="line">	header(<span class="string">'location:index.php'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="preprocessor">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>index.php：显示用户列表的一个页面</code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="keyword">require</span> <span class="string">'redis.php'</span>;</span><br><span class="line">session_start();</span><br><span class="line"><span class="keyword">if</span>(!<span class="keyword">empty</span>(<span class="variable">$_SESSION</span>[<span class="string">'username'</span>]))&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">"登录用户："</span> . <span class="variable">$_SESSION</span>[<span class="string">'username'</span>];</span><br><span class="line">	<span class="comment">// 要取出自己关注的用户</span></span><br><span class="line">	<span class="variable">$ownid</span> = <span class="variable">$_SESSION</span>[<span class="string">'uid'</span>]; <span class="comment">// 取出自己的id</span></span><br><span class="line">	<span class="comment">// 构造自己关注别人的集合</span></span><br><span class="line">	<span class="variable">$key</span> = <span class="string">"guan:"</span> . <span class="variable">$ownid</span>;</span><br><span class="line">	<span class="variable">$guanid</span> = <span class="variable">$redis</span>-&gt;smembers(<span class="variable">$key</span>); <span class="comment">// 取出登录用户关注别人的id</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 要实现把注册的用户列表形式给显示出来</span></span><br><span class="line"><span class="comment">// 还要实现分页，如何计算总的注册用户的数量</span></span><br><span class="line"><span class="comment">// (1)计算总的记录数</span></span><br><span class="line"><span class="variable">$total</span> = <span class="variable">$redis</span>-&gt;lsize(<span class="string">'userid'</span>); <span class="comment">// 返回链表中元素的个数</span></span><br><span class="line"><span class="comment">// (2)定义每页显示的记录数</span></span><br><span class="line"><span class="variable">$perpage</span> = <span class="number">2</span>;</span><br><span class="line"><span class="comment">// (3)计算总的页数</span></span><br><span class="line"><span class="variable">$pagecount</span> = ceil(<span class="variable">$total</span> / <span class="variable">$perpage</span>);</span><br><span class="line"><span class="comment">// (4)定义当前页面</span></span><br><span class="line"><span class="variable">$page</span> = <span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">'page'</span>]) ? (max(<span class="number">1</span>, min(<span class="variable">$_GET</span>[<span class="string">'page'</span>], <span class="variable">$pagecount</span>))) : <span class="number">1</span>;</span><br><span class="line"><span class="comment">// (5)构造limit变量</span></span><br><span class="line"><span class="comment">// 取出链表里面的数据，因为链表里面存储的是id，要根据该id，拼接哈希的键。</span></span><br><span class="line"><span class="comment">/*</span><br><span class="line">第一页：lrange("userid", 0, 1)	($page - 1) * $prepage	($page - 1) * $prepage + $prepage - 1</span><br><span class="line">第二页：lrange("userid", 2, 3)</span><br><span class="line">第三页：lrange("userid", 4, 5)</span><br><span class="line">*/</span></span><br><span class="line"><span class="variable">$offset</span> = (<span class="variable">$page</span> - <span class="number">1</span>) * <span class="variable">$perpage</span>;</span><br><span class="line"><span class="variable">$number</span> = <span class="variable">$offset</span> + <span class="variable">$perpage</span> - <span class="number">1</span>;</span><br><span class="line"><span class="variable">$ids</span> = <span class="variable">$redis</span>-&gt;lrange(<span class="string">'userid'</span>, <span class="variable">$offset</span>, <span class="variable">$number</span>); <span class="comment">// 返回的是数组</span></span><br><span class="line"><span class="variable">$data</span> = <span class="keyword">array</span>();</span><br><span class="line"><span class="keyword">foreach</span>(<span class="variable">$ids</span> <span class="keyword">as</span> <span class="variable">$v</span>)&#123;</span><br><span class="line">	<span class="comment">// 拼接哈希的键：</span></span><br><span class="line">	<span class="variable">$key</span> = <span class="string">"user:id"</span> . <span class="variable">$v</span>;</span><br><span class="line">	<span class="variable">$data</span>[] = <span class="variable">$redis</span>-&gt;hgetall(<span class="variable">$key</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 计算上一页</span></span><br><span class="line"><span class="variable">$prev</span> = max(<span class="number">1</span>, <span class="variable">$page</span> - <span class="number">1</span>);</span><br><span class="line"><span class="comment">// 计算下一页</span></span><br><span class="line"><span class="variable">$next</span> = min(<span class="variable">$page</span> + <span class="number">1</span>, <span class="variable">$pagecount</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span><br><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">&lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h2&gt;用户列表&lt;/h2&gt;</span><br><span class="line">&lt;table width=<span class="string">"500"</span> border=<span class="string">"1"</span> rules=<span class="string">"all"</span>&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		&lt;th&gt;编号&lt;/th&gt;</span><br><span class="line">		&lt;th&gt;姓名&lt;/th&gt;</span><br><span class="line">		&lt;th&gt;年龄&lt;/th&gt;</span><br><span class="line">		&lt;th&gt;操作&lt;/th&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">	<span class="preprocessor">&lt;?php</span> <span class="keyword">foreach</span>(<span class="variable">$data</span> <span class="keyword">as</span> <span class="variable">$v</span>)&#123;<span class="preprocessor">?&gt;</span></span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		&lt;td&gt;<span class="preprocessor">&lt;?php</span> <span class="keyword">echo</span> <span class="variable">$v</span>[<span class="string">'uid'</span>];<span class="preprocessor">?&gt;</span>&lt;/td&gt;</span><br><span class="line">		&lt;td&gt;<span class="preprocessor">&lt;?php</span> <span class="keyword">echo</span> <span class="variable">$v</span>[<span class="string">'username'</span>];<span class="preprocessor">?&gt;</span>&lt;/td&gt;</span><br><span class="line">		&lt;td&gt;<span class="preprocessor">&lt;?php</span> <span class="keyword">echo</span> <span class="variable">$v</span>[<span class="string">'age'</span>];<span class="preprocessor">?&gt;</span>&lt;/td&gt;</span><br><span class="line">		&lt;td&gt;&lt;a href=<span class="string">"action.php?act=update"</span>&gt;修改&lt;/a&gt; | &lt;a href=<span class="string">"action.php?act=guan&amp;id=&lt;?php echo $v['uid'];?&gt;"</span>&gt;关注&lt;/a&gt;&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">	<span class="preprocessor">&lt;?php</span> &#125;<span class="preprocessor">?&gt;</span></span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		&lt;td colspan=<span class="string">"4"</span>&gt;</span><br><span class="line">			&lt;a href=<span class="string">"?page=&lt;?php echo $prev;?&gt;"</span>&gt;上一页&lt;/a&gt;</span><br><span class="line">			&lt;a href=<span class="string">"?page=&lt;?php echo $next;?&gt;"</span>&gt;下一页&lt;/a&gt;</span><br><span class="line">		&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="variable">$guan</span> = <span class="keyword">array</span>();</span><br><span class="line"><span class="keyword">foreach</span>(<span class="variable">$guanid</span> <span class="keyword">as</span> <span class="variable">$v</span>)&#123;</span><br><span class="line">	<span class="comment">// 拼接哈希的键</span></span><br><span class="line">	<span class="variable">$key</span> = <span class="string">"user:id"</span> . <span class="variable">$v</span>;</span><br><span class="line">	<span class="variable">$guan</span>[] = <span class="variable">$redis</span>-&gt;hgetall(<span class="variable">$key</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;pre&gt;'</span>;</span><br><span class="line">print_r(<span class="variable">$guan</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="redis_持久化的方式">redis 持久化的方式</h2><p>redis 是一个支持持久化的内存数据库，也就是说 redis 需要经常将内存中的数据同步到硬盘来保证持久化。<br>redis 支持两种持久化方式：</p>
+<ol>
+<li>snapshotting (快照)默认方式</li>
+<li>append-only file (缩写 aof )的方式</li>
+</ol>
+<h3 id="snapshotting_(快照)默认方式">snapshotting (快照)默认方式</h3><p>快照是默认的持久化方式。这种方式是将内存中数据以快照的方式写入到二进制文件中，默认的文件名为 dump.rdb 。可以通过配置设置自动做快照持久化的方式。我们可以配置 redis 在 n 秒内如果超过 m 个 key 修改就自动做快照。<br>rdb（快照）的工作原理:<br>每隔 N 分钟或 N 次 写操作后,<br>从内存 dump 数据形成 rdb 文件,<br>压缩<br>放在备份目录<br>注:红色部分可通过参数来配置</p>
+<p>如何设置该方式，打开配置文件<br>命令：vim redis.conf<br>找到下面几行（指定备份的触发条件）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">save <span class="number">900</span> <span class="number">1</span></span><br><span class="line">save <span class="number">300</span> <span class="number">10</span></span><br><span class="line">save <span class="number">60</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<p>具体的配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">save <span class="number">900</span> <span class="number">1</span>	<span class="comment">#刷新快照到硬盘中，必须满足两者要求才会触发，即900秒之后至少1个关键字发生变化。</span></span><br><span class="line">save <span class="number">300</span> <span class="number">10</span>	<span class="comment">#必须是300秒之后至少10个关键字发生变化。</span></span><br><span class="line">save <span class="number">60</span> <span class="number">10000</span>	<span class="comment">#必须是60秒之后至少10000个关键字发生变化。</span></span><br><span class="line">（以上<span class="number">3</span>个选项都屏蔽，则rdb禁用）</span><br><span class="line">stop-writes-on-bgsave-error yes    <span class="comment">#后台存储（备份）错误是否停止向redis里面写数据。</span></span><br><span class="line">rdbcompression yes	<span class="comment">#使用LZF压缩rdb文件。</span></span><br><span class="line">rdbchecksum yes		<span class="comment">#存储和加载rdb文件时是否校验。</span></span><br><span class="line">dbfilename dump.rdb	<span class="comment">#设置rdb文件名。</span></span><br><span class="line">dir ./			<span class="comment">#设置工作目录，rdb文件存储的目录。</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：可以手动完成快照保存<br>可以客户端登录后，执行：bgsave<br>如果不通过客户端也可以执行手动快照保存：<code>./bin/redis-cli -a 123 bgsave</code></p>
+</blockquote>
+<h3 id="持久化机制之_aof_方式">持久化机制之 aof 方式</h3><p>由于快照方式是在一定间隔做一次的，所以如果 redis 意外 down 掉的话，就会丢失最后一次快照后的所有修改。<br>aof 比快照方式有更好的持久化性，是由于在使用 aof 时，redis 会将每一个收到的写命令都通过 write 函数追加到文件中，当redis 重启时会通过重新执行文件中保存的写命令来在内存中重建整个数据库的内容。<br>具体的配置：通过配置文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">appendonly yes	<span class="comment">#启用 aof 持久化方式</span></span><br><span class="line">appendfilename appendonly.aof   <span class="comment">#保存命令的文件</span></span><br></pre></td></tr></table></figure>
+<p>执行备份的方式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># appendfsync always   #每次收到写命令就立即强制写入磁盘，最慢的，但是保证完全的持久化，不推荐使用</span></span><br><span class="line">appendfsync everysec   <span class="comment">#每秒钟强制写入磁盘一次，在性能和持久化方面做了很好的折中，推荐</span></span><br><span class="line"><span class="comment"># appendfsync no   #完全依赖 os，性能最好,持久化没保证</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/02/NoSQL数据库之MongoDB/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          NoSQL数据库之MongoDB
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/01/Smarty模板技术/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Smarty 模板技术</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Lian HengKai
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+  <a href="https://github.com/lianhengkai"><img style="position: fixed; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+</body>
+</html>

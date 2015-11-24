@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Sphinx中文分词 | Lian HengKai&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Sphinx中文分词">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sphinx中文分词">
+<meta property="og:url" content="http://yoursite.com/2015/09/03/Sphinx中文分词/index.html">
+<meta property="og:site_name" content="Lian HengKai's Blog">
+<meta property="og:description" content="Sphinx中文分词">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_sphinx01.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_sphinx02.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_sphinx03.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_sphinx04.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_sphinx05.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_sphinx02.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_sphinx06.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_sphinx07.png">
+<meta property="og:image" content="http://yoursite.com/images/201509/lhk_sphinx08.png">
+<meta property="og:updated_time" content="2015-11-24T04:08:58.855Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sphinx中文分词">
+<meta name="twitter:description" content="Sphinx中文分词">
+  
+    <link rel="alternative" href="/atom.xml" title="Lian HengKai&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Lian HengKai</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/应用">应用</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/lianhengkai" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 16.67px;">MySQL</a> <a href="/tags/PDO/" style="font-size: 10px;">PDO</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/Redis/" style="font-size: 10px;">Redis</a> <a href="/tags/Smarty/" style="font-size: 11.67px;">Smarty</a> <a href="/tags/Sphinx/" style="font-size: 10px;">Sphinx</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/jQuery/" style="font-size: 13.33px;">jQuery</a> <a href="/tags/应用/" style="font-size: 18.33px;">应用</a> <a href="/tags/电脑/" style="font-size: 10px;">电脑</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Lian HengKai</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/images/avatar.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Lian HengKai</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/应用">应用</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/lianhengkai" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Sphinx中文分词" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/03/Sphinx中文分词/" class="article-date">
+  	<time datetime="2015-09-03T15:52:23.000Z" itemprop="datePublished">2015-09-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Sphinx中文分词
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sphinx/">Sphinx</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Sphinx/">Sphinx</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Sphinx_简介">Sphinx 简介</h2><h3 id="为什么要用_Sphinx">为什么要用 Sphinx</h3><p>在 mysql 数据库中，对于如下 sql 语句， <code>select * from xxx where like xxx &#39;%xxx&#39;(以%开头的like查询)</code> ，无法使用到任何索引优化，导致如果数据量非常大，查询速度会非常慢。而这种 sql 语句在很多功能中都要用到，如根据歌词查询歌曲，根据剧情查询电影等。如果要加快查询只能使用第三方软件, Sphinx 和 lucence。</p>
+<p>mysql 中也提供了全文索引的功能，但是有两个问题：（1）只有 myisam 引擎支持（2）对中文支持不好。不过现在最新的mysql 5.6 版本中的 innodb 1.2 的版本也同样支持全文索引。</p>
+<a id="more"></a>
+<h3 id="Sphinx_介绍">Sphinx 介绍</h3><p>中文名：全文索引引擎。只支持英文和俄文。但是只要有相应的语言包也可支持任何语言。国内有一团队在 Sphinx 基础上封装了一个带中文包的软件：coreseek。</p>
+<h3 id="使用原理">使用原理</h3><ol>
+<li>先创建数据源，</li>
+<li>根据数据源创建索引，使用分词技术。</li>
+<li>php 把查询的关键词给 Sphinx 服务器，Sphinx 根据关键词查找到关键字在 mysql 表里面的记录的 id 。Sphinx 把 id 返回给 php 查询端</li>
+<li>php 根据返回的 id ，查询 mysql 服务器，</li>
+</ol>
+<p><img src="/images/201509/lhk_sphinx01.png" alt=""></p>
+<h2 id="安装">安装</h2><h3 id="下载软件">下载软件</h3><p>从 <a href="http://www.Sphinxsearch.com" target="_blank" rel="external">http://www.Sphinxsearch.com</a> 官网下载</p>
+<p>支持中文分词的可以<br>从 <a href="http://www.coreseek.com" target="_blank" rel="external">http://www.coreseek.com</a> 下载</p>
+<blockquote>
+<p>Sphinx 的压缩包中包含以下软件：<br>indexer : 用来创建索引<br>search : 一个命令行的测试程序<br>searchd :  服务器端<br>一些客户端 api 库，包含 php , python , perl , ruby 等 。<br>Sphinx 的配置文件： sphinx.conf</p>
+</blockquote>
+<p>进行解压后，拷贝到指定的目录，并改名为 Sphinx</p>
+<h3 id="创建配置文件">创建配置文件</h3><p>打开Sphinx的目录下面的 etc 目录，把 csft_mysql.conf 文件，拷到到上一级目录，并改名为 sphinx.conf 文件。</p>
+<h2 id="具体的配置使用">具体的配置使用</h2><p>数据准备：创建一张大容量的数据表。这里用到了一个单词表，里面有 15 w 条数据。</p>
+<p>数据库表结构：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> <span class="string">`curl_words`</span> (</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">unsigned</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="string">`title`</span> <span class="built_in">varchar</span>(<span class="number">30</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span>,</span><br><span class="line">  <span class="string">`author`</span> <span class="built_in">varchar</span>(<span class="number">30</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="string">''</span>,</span><br><span class="line">  <span class="string">`content`</span> <span class="built_in">text</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=MyISAM  <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span></span><br></pre></td></tr></table></figure>
+<h3 id="根据数据源，创建索引">根据数据源，创建索引</h3><ul>
+<li>创建数据源</li>
+</ul>
+<p>打开 sphinx.conf 配置文件，创建数据源：</p>
+<p>语法：</p>
+<p>source 数据源名称{<br>    //数据源的基本配置<br>}</p>
+<p>注意： 在一个配置文件中，可以有多个数据源。</p>
+<p>比如：创建一个单词表的数据源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> words</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">type</span>                       = mysql</span><br><span class="line"></span><br><span class="line">    sql_host                = localhost</span><br><span class="line">    sql_user                = root</span><br><span class="line">    sql_pass               = <span class="number">123</span></span><br><span class="line">    sql_db                   = words</span><br><span class="line">    sql_port                = <span class="number">3306</span></span><br><span class="line">    <span class="comment"># 预查询语句，设置字符集，必须设置 utf8</span></span><br><span class="line">    sql_query_pre      = SET NAMES utf8</span><br><span class="line">    <span class="comment"># 主查询语句，该语句的执行结果为数据源</span></span><br><span class="line">    <span class="comment"># 第一必须是id 且是整数，必须是主键 后面的字段为需要添加索引的字段 </span></span><br><span class="line">    sql_query                = SELECT id, title, content FROM curl_words</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>根据数据源创建索引</li>
+</ul>
+<p>注意：一个数据源的配置对应一个索引的配置。</p>
+<p>语法：</p>
+<p>index 索引的名称{<br>    //具体的配置<br>}</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 索引文件定义 index NAME  (NAME 可以随意定义)</span></span><br><span class="line">index words</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">source</span>            = words             <span class="comment">#对应的source名称</span></span><br><span class="line">    path            =  D:/server/sphinx/var/data/words  <span class="comment"># 索引文件存放路径,此处words就指索引文件的名称</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 以下无须更改</span></span><br><span class="line">    docinfo            	 = extern</span><br><span class="line">    mlock           	 = <span class="number">0</span></span><br><span class="line">    morphology      	 = none</span><br><span class="line">    min_word_len        = <span class="number">1</span></span><br><span class="line">    html_strip               = <span class="number">0</span></span><br><span class="line">    <span class="comment"># 以上无须更改</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 中文字典位置,指定语言包的为准，要注意：最后的"/"不要省略</span></span><br><span class="line">    charset_dictpath = D:/server/sphinx/etc/                           </span><br><span class="line">    charset_<span class="built_in">type</span>        = zh_cn.utf-<span class="number">8</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>服务器方面的配置</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#searchd服务定义</span></span><br><span class="line">searchd</span><br><span class="line">&#123;</span><br><span class="line">    listen                  =   <span class="number">9312</span></span><br><span class="line">    <span class="built_in">read</span>_timeout        = <span class="number">5</span></span><br><span class="line">    max_children        = <span class="number">30</span></span><br><span class="line">    max_matches            = <span class="number">1000</span></span><br><span class="line">    seamless_rotate        = <span class="number">0</span></span><br><span class="line">    preopen_indexes        = <span class="number">0</span></span><br><span class="line">    unlink_old            = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 更改为对应的PID 日志路径</span></span><br><span class="line">    pid_file = D:/server/sphinx/var/<span class="built_in">log</span>/searchd_mysql.pid  <span class="comment">#请修改为实际使用的绝对路径，例如：/usr/local/coreseek/var/...</span></span><br><span class="line">    <span class="built_in">log</span> = D:/server/sphinx/var/<span class="built_in">log</span>/searchd_mysql.log        <span class="comment">#请修改为实际使用的绝对路径，例如：/usr/local/coreseek/var/...</span></span><br><span class="line">    query_<span class="built_in">log</span> = D:/server/sphinx/var/<span class="built_in">log</span>/query_mysql.log <span class="comment">#请修改为实际使用的绝对路径，例如：/usr/local/coreseek/var/...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>根据配置文件，创建索引</li>
+</ul>
+<p>使用 bin 目录下面的 indexer.exe 命令来完成</p>
+<p>语法：</p>
+<p>CMD下执行 &gt; indexer.exe   –c  配置文件的全路径  前面创建索引的名称|–all</p>
+<p>–all 是指创建所有的索引</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\server\sphinx\bin &gt; indexer.exe -c D:/server/sphinx/sphinx.conf words</span><br></pre></td></tr></table></figure>
+<p><img src="/images/201509/lhk_sphinx02.png" alt=""></p>
+<p>注意：若出现错误：<br>原因：配置文件的编码是 utf-8+ 的，改成：utf-8 即可。</p>
+<p>创建的索引文件如下：</p>
+<p><img src="/images/201509/lhk_sphinx03.png" alt=""></p>
+<h3 id="启动_Sphinx_的服务器">启动 Sphinx 的服务器</h3><ul>
+<li>把 Sphinx 的服务，安装成 window 的一个服务</li>
+</ul>
+<p>注意：以管理员的方式进入 cmd</p>
+<p>使用 searchd.exe 命令来完成服务的安装</p>
+<p>语法：</p>
+<p>searchd.exe –c 配置文件  –install</p>
+<p><img src="/images/201509/lhk_sphinx04.png" alt=""></p>
+<ul>
+<li>启动 Sphinx 的服务</li>
+</ul>
+<p>在 cmd 下开启 searchd 服务，命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net start searchd</span><br></pre></td></tr></table></figure>
+<h3 id="入门使用">入门使用</h3><p>在使用 Sphinx 时，要把一个接口文件 <code>sphinxapi.php</code> 拷贝到我们项目中来。php 的文件中使用时，直接引入即可</p>
+<p>创建 php 脚本文件</p>
+<p>index.php 使用 ajax 应用实现单词查找</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html <span class="keyword">PUBLIC</span> <span class="string">"-//W3C//DTD XHTML 1.0 Strict//EN"</span> <span class="string">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"</span>&gt;</span><br><span class="line">&lt;html xmlns=<span class="string">"http://www.w3.org/1999/xhtml"</span> xml:lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html;charset=UTF-8"</span>&gt;</span><br><span class="line">	&lt;title&gt;search word&lt;/title&gt;</span><br><span class="line">	&lt;style type=<span class="string">"text/css"</span>&gt;</span><br><span class="line">		<span class="comment">#content&#123;</span></span><br><span class="line">			background: <span class="comment">#EEE;</span></span><br><span class="line">			border: <span class="number">1</span>px solid <span class="comment">#CCC;</span></span><br><span class="line">			padding: <span class="number">2</span>px;</span><br><span class="line">			display: none;</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;h1&gt;单词查询&lt;/h1&gt;</span><br><span class="line">	&lt;p&gt;</span><br><span class="line">		world : &lt;input type=<span class="string">"text"</span> name=<span class="string">"word"</span> id=<span class="string">"word"</span> /&gt;</span><br><span class="line">	&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;</span><br><span class="line">		&lt;input type=<span class="string">"button"</span> name=<span class="string">"btn"</span> id=<span class="string">"btn"</span> value=<span class="string">"提交"</span> /&gt;</span><br><span class="line">	&lt;/p&gt;</span><br><span class="line">	&lt;div id=<span class="string">"content"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;	</span><br><span class="line">	window.onload = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="comment">// 绑定提交事件</span></span><br><span class="line">		<span class="keyword">var</span> btn = document.getElementById(<span class="string">'btn'</span>);</span><br><span class="line">		btn.onclick = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="comment">// 获取单词</span></span><br><span class="line">			<span class="keyword">var</span> world = document.getElementById(<span class="string">'word'</span>);</span><br><span class="line">			<span class="keyword">var</span> value  = world.value;</span><br><span class="line">			<span class="keyword">if</span>(value != <span class="string">''</span>)&#123;</span><br><span class="line">				<span class="keyword">var</span> obj = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">				<span class="comment">// GET提交注意转码</span></span><br><span class="line">				obj.open(<span class="string">'GET'</span>,<span class="string">'./search.php?word='</span> + encodeURI(value));</span><br><span class="line"></span><br><span class="line">				obj.send(<span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line">				obj.onreadystatechange = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">					<span class="keyword">if</span>(obj.status == <span class="number">200</span> &amp;&amp; obj.readyState == <span class="number">4</span>)&#123;</span><br><span class="line">						<span class="comment">// 放置内容</span></span><br><span class="line">						<span class="keyword">var</span> container = document.getElementById(<span class="string">'content'</span>);</span><br><span class="line">						container.style.display = <span class="string">'block'</span>;</span><br><span class="line">						container.innerHTML = obj.responseText;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				alert(<span class="string">'请输入单词！'</span>);</span><br><span class="line">				<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>search.php 查找文件</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$_GET</span>[<span class="string">'word'</span>]))&#123;</span><br><span class="line">		header(<span class="string">"Content-type:text/html;charset=utf-8"</span>);</span><br><span class="line">		<span class="comment">// 引入api</span></span><br><span class="line">		<span class="keyword">require</span> <span class="string">'./sphinxapi.php'</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">echo</span> <span class="string">"&lt;pre&gt;"</span>;</span><br><span class="line">		<span class="comment">// 定义查询单词和查询源头</span></span><br><span class="line">		<span class="variable">$search</span> = <span class="variable">$_GET</span>[<span class="string">'word'</span>];</span><br><span class="line">		<span class="variable">$source</span> = <span class="string">'words'</span>;</span><br><span class="line"></span><br><span class="line">		<span class="variable">$sphinx</span> = <span class="keyword">new</span> SphinxClient();</span><br><span class="line">		<span class="comment">// 指定匹配模式</span></span><br><span class="line">		<span class="variable">$sphinx</span>-&gt;setMatchMode(SPH_MATCH_PHRASE);</span><br><span class="line"></span><br><span class="line">		<span class="variable">$sphinx</span>-&gt;setServer(<span class="string">'localhost'</span>, <span class="number">9312</span>);</span><br><span class="line">		<span class="comment">// $sphinx-&gt;query(关键词，索引的名称);// 使用关键词来查询</span></span><br><span class="line">		<span class="variable">$result</span> = <span class="variable">$sphinx</span>-&gt;query(<span class="variable">$search</span>);<span class="comment">// 返回的是一维数组，该数组里面的键是我们需要的。</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable">$result</span>[<span class="string">'matches'</span>]))&#123;</span><br><span class="line">		</span><br><span class="line">			<span class="variable">$ID</span> = array_keys(<span class="variable">$result</span>[<span class="string">'matches'</span>]);</span><br><span class="line"></span><br><span class="line">			<span class="variable">$IDS</span> = implode(<span class="string">','</span>, <span class="variable">$ID</span>);</span><br><span class="line"></span><br><span class="line">			mysql_connect(<span class="string">'localhost'</span>,<span class="string">'root'</span>,<span class="string">'123'</span>);</span><br><span class="line"></span><br><span class="line">			mysql_select_db(<span class="string">'words'</span>);</span><br><span class="line"></span><br><span class="line">			mysql_query(<span class="string">'set names utf8'</span>);</span><br><span class="line"></span><br><span class="line">			<span class="variable">$rs</span> = mysql_query(<span class="string">"select * from curl_words where id in ($IDS) AND title &lt;&gt; '' "</span>);</span><br><span class="line">			<span class="keyword">while</span> (<span class="variable">$row</span> = mysql_fetch_assoc(<span class="variable">$rs</span>)) &#123;</span><br><span class="line">				<span class="comment">// 第一个参数是：原有输出的数据</span></span><br><span class="line">			        <span class="comment">// 第二个参数是：索引的名称</span></span><br><span class="line">			        <span class="comment">// 第三个参数是：关键词</span></span><br><span class="line">			        <span class="comment">// 第四个参数是：添加的样式</span></span><br><span class="line">				<span class="variable">$row</span> = <span class="variable">$sphinx</span>-&gt;buildExcerpts(</span><br><span class="line">					<span class="keyword">array</span>(<span class="variable">$row</span>[<span class="string">'title'</span>], <span class="variable">$row</span>[<span class="string">'content'</span>]),</span><br><span class="line">					<span class="variable">$source</span>,</span><br><span class="line">					<span class="variable">$search</span>,</span><br><span class="line">					<span class="keyword">array</span>(<span class="string">'before_match'</span>=&gt;<span class="string">'&lt;strong style="color:red"&gt;'</span>,<span class="string">'after_match'</span>=&gt;<span class="string">'&lt;/strong&gt;'</span>)</span><br><span class="line">					);</span><br><span class="line">				<span class="comment">// $sc-&gt;buildExcerpts该函数返回的是一个索引数组，因此输入数据时，要使用索引的下标。</span></span><br><span class="line">				<span class="keyword">echo</span> <span class="string">'标题：'</span> . <span class="variable">$row</span>[<span class="number">0</span>] . <span class="string">'&lt;br&gt;歌词：'</span> . <span class="variable">$row</span>[<span class="number">1</span>] . <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">echo</span> <span class="string">"sorry,there is no word found!"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="string">"非法提交"</span>;</span><br><span class="line">	&#125;</span><br><span class="line"> <span class="preprocessor">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="加亮显示关键词">加亮显示关键词</h3><p>使用 Sphinx 的方法：buildExcerpts : 创建文档摘要，就是给关键词添加样式</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="variable">$row</span> = mysql_fetch_assoc(<span class="variable">$rs</span>)) &#123;</span><br><span class="line">	<span class="comment">// 第一个参数是：原有输出的数据</span></span><br><span class="line">	<span class="comment">// 第二个参数是：索引的名称</span></span><br><span class="line">	<span class="comment">// 第三个参数是：关键词</span></span><br><span class="line">	<span class="comment">// 第四个参数是：添加的样式</span></span><br><span class="line">	<span class="variable">$row</span> = <span class="variable">$sphinx</span>-&gt;buildExcerpts(</span><br><span class="line">		<span class="keyword">array</span>(<span class="variable">$row</span>[<span class="string">'title'</span>], <span class="variable">$row</span>[<span class="string">'content'</span>]),</span><br><span class="line">		<span class="variable">$source</span>,</span><br><span class="line">		<span class="variable">$search</span>,</span><br><span class="line">		<span class="keyword">array</span>(<span class="string">'before_match'</span>=&gt;<span class="string">'&lt;strong style="color:red"&gt;'</span>,<span class="string">'after_match'</span>=&gt;<span class="string">'&lt;/strong&gt;'</span>)</span><br><span class="line">		);</span><br><span class="line">	<span class="comment">// $sc-&gt;buildExcerpts该函数返回的是一个索引数组，因此输入数据时，要使用索引的下标。</span></span><br><span class="line">	<span class="keyword">echo</span> <span class="string">'标题：'</span> . <span class="variable">$row</span>[<span class="number">0</span>] . <span class="string">'&lt;br&gt;歌词：'</span> . <span class="variable">$row</span>[<span class="number">1</span>] . <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Sphinx_的匹配模式">Sphinx 的匹配模式</h2><h3 id="SPH_MATCH_ALL_:_完全匹配所有的词">SPH_MATCH_ALL : 完全匹配所有的词</h3><p>如 “冬天的雪”，并不会匹配 “我爱冬天”,<br>但可以匹配 “我的朋友，爱冬天，和雪”。<br>因为 “冬天的雪” 被分成 “冬天”，“的”，“雪”三个词，匹配条件是同时包含这三个词，<br>“我爱冬天” 里只包含一个 “冬天”</p>
+<h3 id="SPH_MATCH_ANY_:_匹配查询词中的任意一个。">SPH_MATCH_ANY : 匹配查询词中的任意一个。</h3><p>如 “冬天的雪”，会匹配 “我爱冬天”。<br>因为 “冬天的雪” 被分成 “冬天” ，“的” ，“雪” 三个词<br>因为 “我爱冬天” 里有一个 “冬天” 相匹配。</p>
+<h3 id="SPH_MATCH_PHRASE_:_将整个查询词看做一个词组，要完全匹配">SPH_MATCH_PHRASE : 将整个查询词看做一个词组，要完全匹配</h3><p>如 “冬天的雪”，不会匹配 “我的朋友，爱冬天，和雪”，虽然都包含同样的 </p>
+<h3 id="SPH_MATCH_BOOLEAN_:_将查询看作一个布尔表达式">SPH_MATCH_BOOLEAN : 将查询看作一个布尔表达式</h3><p>如：hello|world<br>查询 “hello”，或 “world”</p>
+<h3 id="SPH_MATCH_EXTENDED_:_支持一些扩展的语法">SPH_MATCH_EXTENDED : 支持一些扩展的语法</h3><p>支持 @字段 查询<br>如，查询 title 包含 abc , content 包含 bcd 的：<br>‘@title abc @content bcd’</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$sphinx</span> = <span class="keyword">new</span> SphinxClient();</span><br><span class="line"><span class="comment">// 指定匹配模式</span></span><br><span class="line"><span class="variable">$sphinx</span>-&gt;setMatchMode(SPH_MATCH_ALL);		<span class="comment">// 完全匹配所有的词</span></span><br><span class="line"><span class="variable">$sphinx</span>-&gt;setMatchMode(SPH_MATCH_ANY);		<span class="comment">// 匹配查询词中的任意一个</span></span><br><span class="line"><span class="variable">$sphinx</span>-&gt;setMatchMode(SPH_MATCH_PHRASE);	<span class="comment">// 将整个查询词看做一个词组，要完全匹配</span></span><br><span class="line"><span class="variable">$sphinx</span>-&gt;setMatchMode(SPH_MATCH_BOOLEAN);	<span class="comment">// 将查询看作一个布尔表达式</span></span><br><span class="line"><span class="variable">$sphinx</span>-&gt;setMatchMode(SPH_MATCH_EXTENDED);	<span class="comment">// 支持一些扩展的语法</span></span><br></pre></td></tr></table></figure>
+<h2 id="增量索引">增量索引</h2><p>就是对后面添加的数据，建立索引。</p>
+<p>方法：只需要，对后续添加的数据单独建立索引，建完索引后，合并到主索引即可。</p>
+<p>实现原理：</p>
+<ol>
+<li>新建一张表，记录一下上次已经创建好索引的最后一条记录的 id </li>
+<li>当索引时，然后从数据库中取出所有大于 id 的数据，这些就是新的数据然后创建一个小的索引文件。</li>
+<li>把增量这部分数据生成的小的索引合并到主索引文件上去。</li>
+<li>把最后一条记录的 id 更新到第一步创建的表中。</li>
+</ol>
+<p>具体的步骤：</p>
+<ul>
+<li>创建一张表，用于记录每次创建完成索引后，记录的最大 id</li>
+</ul>
+<p><img src="/images/201509/lhk_sphinx05.png" alt=""></p>
+<ul>
+<li>创建主索引的数据源，以及主索引</li>
+</ul>
+<p>修改之前的配置文件 <code>sphinx.conf</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#源定义</span></span><br><span class="line"><span class="built_in">source</span> words</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">type</span>                       = mysql</span><br><span class="line"></span><br><span class="line">    sql_host                = localhost</span><br><span class="line">    sql_user                = root</span><br><span class="line">    sql_pass               = <span class="number">123</span></span><br><span class="line">    sql_db                   = words</span><br><span class="line">    sql_port                = <span class="number">3306</span></span><br><span class="line">    <span class="comment"># 预查询语句，设置字符集，必须设置utf8</span></span><br><span class="line">    sql_query_pre      = SET NAMES utf8</span><br><span class="line">    <span class="comment"># 主查询语句，该语句的执行结果为数据源</span></span><br><span class="line">    <span class="comment"># 第一必须是id 且是整数，必须是主键 后面的字段为需要添加索引的字段 </span></span><br><span class="line">    sql_query                = SELECT id, title, content FROM curl_words</span><br><span class="line">    <span class="comment"># 创建完主索引后，要保存最大的id在a表里面</span></span><br><span class="line">    sql_query_post = update a <span class="built_in">set</span> max_id = (select max(id) from curl_words)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#index定义</span></span><br><span class="line">index words</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">source</span>            = words             <span class="comment">#对应的source名称</span></span><br><span class="line">    path            =  D:/server/sphinx/var/data/words  <span class="comment"># 索引文件存放路径,此处words就指索引文件的名称</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 以下无须更改</span></span><br><span class="line">    docinfo            	 = extern</span><br><span class="line">    mlock           	 = <span class="number">0</span></span><br><span class="line">    morphology      	 = none</span><br><span class="line">    min_word_len        = <span class="number">1</span></span><br><span class="line">    html_strip               = <span class="number">0</span></span><br><span class="line">    <span class="comment"># 以上无须更改</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 中文字典位置,指定语言包的为准，要注意：最后的“/”不要省略</span></span><br><span class="line">    charset_dictpath = D:/server/sphinx/etc/                           </span><br><span class="line">    charset_<span class="built_in">type</span>        = zh_cn.utf-<span class="number">8</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建增量索引的数据源以及增量索引</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#增量数据源</span></span><br><span class="line"><span class="built_in">source</span> words_zl</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">type</span>                       = mysql</span><br><span class="line"></span><br><span class="line">    sql_host                = localhost</span><br><span class="line">    sql_user                = root</span><br><span class="line">    sql_pass               = <span class="number">123</span></span><br><span class="line">    sql_db                   = words</span><br><span class="line">    sql_port                = <span class="number">3306</span></span><br><span class="line">    <span class="comment"># 预查询语句，设置字符集，必须设置utf8</span></span><br><span class="line">    sql_query_pre      = SET NAMES utf8</span><br><span class="line">    <span class="comment"># 主查询语句，该语句的执行结果为数据源</span></span><br><span class="line">    <span class="comment"># 第一必须是id 且是整数，必须是主键 后面的字段为需要添加索引的字段 </span></span><br><span class="line">    sql_query                = SELECT id, title, content FROM curl_words <span class="built_in">where</span> id &gt; (select max_id from a)</span><br><span class="line">    <span class="comment"># 创建完主索引后，要保存最大的id在a表里面</span></span><br><span class="line">    sql_query_post = update a <span class="built_in">set</span> max_id = (select max(id) from curl_words)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#增量索引</span></span><br><span class="line">index words_zl</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">source</span>            = words_zl             <span class="comment">#对应的source名称</span></span><br><span class="line">    path            =  D:/server/sphinx/var/data/words_zl  <span class="comment"># 索引文件存放路径,此处words就指索引文件的名称</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 以下无须更改</span></span><br><span class="line">    docinfo            	 = extern</span><br><span class="line">    mlock           	 = <span class="number">0</span></span><br><span class="line">    morphology      	 = none</span><br><span class="line">    min_word_len        = <span class="number">1</span></span><br><span class="line">    html_strip               = <span class="number">0</span></span><br><span class="line">    <span class="comment"># 以上无须更改</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 中文字典位置,指定语言包的为准，要注意：最后的“/”不要省略</span></span><br><span class="line">    charset_dictpath = D:/server/sphinx/etc/                           </span><br><span class="line">    charset_<span class="built_in">type</span>        = zh_cn.utf-<span class="number">8</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建主索引</li>
+</ul>
+<blockquote>
+<p>先把之前创建的索引文件都删了</p>
+</blockquote>
+<p><img src="/images/201509/lhk_sphinx02.png" alt=""></p>
+<ul>
+<li>添加记录，创建增量索引</li>
+</ul>
+<p><img src="/images/201509/lhk_sphinx06.png" alt=""></p>
+<p><img src="/images/201509/lhk_sphinx07.png" alt=""></p>
+<ul>
+<li>把增量索引合并到主索引里面</li>
+</ul>
+<p>语法：</p>
+<p><code>indexer  -c 配置文件   --merge 主索引文件 增量索引文件</code></p>
+<p><img src="/images/201509/lhk_sphinx08.png" alt=""></p>
+<p>后续添加数据只需要创建增量索引即可，然后合并到主索引即可。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/04/PHP之验证码/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          PHP之验证码
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/03/PHP之PDO操作MySQL/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PHP之PDO操作MySQL</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Lian HengKai
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+  <a href="https://github.com/lianhengkai"><img style="position: fixed; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+</body>
+</html>

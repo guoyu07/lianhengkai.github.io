@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>贪吃蛇</title>
+<script src="js/public.js"></script>
+<script src="js/snake.js"></script>
+<link rel="stylesheet" href="css/snake.css">
+<script type="text/javascript">
+	// 定义全局变量
+	var map,food,snake,time;
+	window.onload = function(){
+		//实例化地图类
+		map = new Map(400,400);
+		//调用地图显示方法
+		map.show();
+		
+		//为开始按钮绑定开始游戏函数
+		$('start').onclick = function(){	
+			start();
+			this.style.backgroundImage = "url('images/start_bw.png')";
+			this.onclick = '';
+		};
+		
+		//为退出按钮绑定退出游戏函数
+		$('leave').onclick = function(){	
+			if(confirm('你确定要退出游戏吗？')){
+				closeWin();
+			}
+		};
+		
+		//定义初始化游戏函数
+		function start(){		
+			//实例化蛇类
+			snake = new Snake(20,20);
+			//调用蛇初始化方法
+			snake.init();
+			//调用蛇显示方法
+			snake.show();
+			//实例化食物类
+			food = new Food(20,20);
+			//调用食物显示方法
+			food.show();
+			//time = setInterval('snake.move()',100);
+		}
+		
+		//定义方向键上下左右按下事件
+		document.onkeydown = function(e){
+			var code = e.keyCode || event.keyCode;
+			if(code == 13 && snake == null){
+				start();
+				$('start').style.backgroundImage = "url('images/start_bw.png')";
+				$('start').onclick = '';
+			}else if(snake){
+				snake.setDirect(code);
+			}
+		}	
+	}
+</script>
+</head>
+<body>
+	<div id="desk">
+		<div id="map"></div>
+		<div id="start"></div>
+		<div id="leave"></div>
+		<div id="score"></div>
+		<div id="level"></div>
+		<div id="message"></div>
+	</div>
+</body>
+</html>

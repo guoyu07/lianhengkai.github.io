@@ -1,0 +1,594 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>键盘</title>
+    <style type="text/css">
+        h2 {
+            font-size: 24px;
+            position: relative;
+            top: 15px;
+            left: 100px;
+        }
+
+        body {
+            background: #f5f6f7;
+            font-size: 12px;
+        }
+
+        #jianpan {
+            width: 1100px;
+            height: 360px;
+            border: 1px solid #999;
+            margin: 100px auto;
+            background: #fff;
+            border-radius: 20px;
+            border: none;
+            box-shadow: rgba(0,0,0,0.3) 0 1px 5px;
+            position: relative;
+        }
+
+        .anjian {
+            width: 40px;
+            height: 40px;
+            border: none;
+            box-shadow: rgba(0,0,0,0.3) 0 1px 5px;
+            position: absolute;
+            border-radius: 4px;
+        }
+
+        .lan_1 {
+            top: 47px;
+            height: 28px;
+        }
+
+        .esc {
+            left: 20px;
+        }
+
+        .f1 {
+            left: 116px;
+        }
+
+        .f2 {
+            left: 164px;
+        }
+
+        .f3 {
+            left: 212px;
+        }
+
+        .f4 {
+            left: 260px;
+        }
+
+        .f5 {
+            left: 328px;
+        }
+
+        .f6 {
+            left: 384px;
+        }
+
+        .f7 {
+            left: 432px;
+        }
+
+        .f8 {
+            left: 480px;
+        }
+
+        .f9 {
+            left: 548px;
+        }
+
+        .f10 {
+            left: 596px;
+        }
+
+        .f11 {
+            left: 644px;
+        }
+
+        .f12 {
+            left: 692px;
+        }
+
+        .lan_2 {
+            top: 85px;
+        }
+
+        .a_1 {
+            left: 20px;
+        }
+
+        .a_2 {
+            left: 68px;
+        }
+
+        .a_3 {
+            left: 116px;
+        }
+
+        .a_4 {
+            left: 164px;
+        }
+
+        .a_5 {
+            left: 212px;
+        }
+
+        .a_6 {
+            left: 260px;
+        }
+
+        .a_7 {
+            left: 308px;
+        }
+
+        .a_8 {
+            left: 356px;
+        }
+
+        .a_9 {
+            left: 404px;
+        }
+
+        .a_10 {
+            left: 452px;
+        }
+
+        .a_11 {
+            left: 500px;
+        }
+
+        .a_12 {
+            left: 548px;
+        }
+
+        .a_13 {
+            left: 596px;
+        }
+
+        .a_14 {
+            left: 644px;
+            width: 88px;
+        }
+
+        .prt, .insert, .delete, .l_left {
+            left: 747px;
+        }
+
+        .scroll, .home, .end, .l_up, .l_down {
+            left: 796px;
+        }
+
+        .pause, .page_up, .page_down, .l_right {
+            left: 844px;
+        }
+
+        .lan_3 {
+            top: 130px;
+        }
+
+        .tap {
+            left: 20px;
+            width: 70px;
+        }
+
+        .q {
+            left: 98px;
+        }
+
+        .w {
+            left: 146px;
+        }
+
+        .e {
+            left: 194px;
+        }
+
+        .r {
+            left: 242px;
+        }
+
+        .t {
+            left: 290px;
+        }
+
+        .y {
+            left: 338px;
+        }
+
+        .u {
+            left: 386px;
+        }
+
+        .i {
+            left: 434px;
+        }
+
+        .o {
+            left: 482px;
+        }
+
+        .p {
+            left: 530px;
+        }
+
+        .p1 {
+            left: 578px;
+        }
+
+        .p2 {
+            left: 626px;
+        }
+
+        .p3 {
+            left: 674px;
+            width: 58px;
+        }
+
+        .lan_4 {
+            top: 175px;
+        }
+
+        .caps {
+            left: 20px;
+            width: 80px;
+        }
+
+        .a {
+            left: 108px;
+        }
+
+        .s {
+            left: 156px;
+        }
+
+        .d {
+            left: 204px;
+        }
+
+        .f {
+            left: 252px;
+        }
+
+        .g {
+            left: 300px;
+        }
+
+        .h {
+            left: 348px;
+        }
+
+        .j {
+            left: 396px;
+        }
+
+        .k {
+            left: 444px;
+        }
+
+        .l {
+            left: 492px;
+        }
+
+        .b_1 {
+            left: 540px;
+        }
+
+        .b_2 {
+            left: 588px;
+        }
+
+        .b_3 {
+            left: 636px;
+            width: 96px;
+        }
+
+        .lan_5 {
+            top: 220px;
+        }
+
+        .shift {
+            left: 20px;
+            width: 107px;
+        }
+
+        .z {
+            left: 135px;
+        }
+
+        .x {
+            left: 183px;
+        }
+
+        .c {
+            left: 231px;
+        }
+
+        .v {
+            left: 279px;
+        }
+
+        .b {
+            left: 327px;
+        }
+
+        .n {
+            left: 375px;
+        }
+
+        .m {
+            left: 423px;
+        }
+
+        .m_1 {
+            left: 471px;
+        }
+
+        .m_2 {
+            left: 519px;
+        }
+
+        .m_3 {
+            left: 569px;
+        }
+
+        .m_4 {
+            left: 615px;
+            width: 117px;
+        }
+
+        .lan_6 {
+            top: 265px;
+        }
+
+        .ctrl, .ctrl_1 {
+            width: 65px;
+        }
+
+        .windows, .windows_1 {
+            width: 55px;
+        }
+
+        .alt, .alt_1, .right_on {
+            width: 50px;
+        }
+
+        .ctrl {
+            left: 20px;
+        }
+
+        .windows {
+            left: 93px;
+        }
+
+        .alt {
+            left: 156px;
+        }
+
+        .space {
+            left: 214px;
+            width: 270px;
+        }
+
+        .alt_1 {
+            left: 492px;
+        }
+
+        .windows_1 {
+            left: 550px;
+        }
+
+        .right_on {
+            left: 613px;
+        }
+
+        .ctrl_1 {
+            left: 671px;
+        }
+
+        .ctrl_1 {
+            width: 61px;
+        }
+
+        span.first {
+            position: absolute;
+            top: 2px;
+            left: 5px;
+            line-height: 12px;
+        }
+
+        span.second {
+            position: absolute;
+            top: 15px;
+            text-align: center;
+            width: 40px;
+        }
+
+        span.third {
+            position: absolute;
+            top: 10px;
+            left: 5px;
+            width: 40px;
+            line-height: 12px;
+        }
+
+        span.fourth {
+            position: absolute;
+            top: 23px;
+            left: 5px;
+            width: 40px;
+            line-height: 12px;
+        }
+
+        span.fifth {
+            position: absolute;
+            top: 40px;
+            left: 5px;
+            width: 40px;
+            line-height: 12px;
+        }
+
+
+        .num_lock, .seven, .four, .one, .zone {
+            left: 899px;
+        }
+
+        .a_15, .eight, .five, .two {
+            left: 947px;
+        }
+
+        .a_16, .nine, .six, .three, .del {
+            left: 995px;
+        }
+
+        .a_17, .add, .s_enter {
+            left: 1043px;
+        }
+
+        .zone {
+            width: 88px;
+        }
+
+        .add, .s_enter {
+            height: 85px;
+        }
+    </style>
+	<script type="text/javascript">
+		window.onload = function(){
+			document.onkeydown = function(e){
+				var code = e.keyCode || event.keyCode;
+				//alert(code);
+				$(code).parentNode.style.backgroundColor = '#71DEF9';
+				$(code).parentNode.style.color = '#fff';
+			}
+			document.onkeyup = function(e){
+				var code = e.keyCode || event.keyCode;
+				$(code).parentNode.style.backgroundColor = '#fff';
+				$(code).parentNode.style.color = '#000';
+			}
+		}
+
+		// 1.定义一个函数，用于获取指定id的DOM对象
+		function $(id){
+			return document.getElementById(id);
+		}
+	</script>
+</head>
+<body>
+    <div id="jianpan">
+        <div class="esc anjian lan_1"><span class="first" id="27">Esc</span></div>
+        <div class="f1 anjian lan_1"><span class="first" id="112">F1</span></div>
+        <div class="f2 anjian lan_1"><span class="first" id="113">F2</span></div>
+        <div class="f3 anjian lan_1"><span class="first" id="114">F3</span></div>
+        <div class="f4 anjian lan_1"><span class="first" id="115">F4</span></div>
+        <div class="f5 anjian lan_1"><span class="first" id="116">F5</span></div>
+        <div class="f6 anjian lan_1"><span class="first" id="117">F6</span></div>
+        <div class="f7 anjian lan_1"><span class="first" id="118">F7</span></div>
+        <div class="f8 anjian lan_1"><span class="first" id="119">F8</span></div>
+        <div class="f9 anjian lan_1"><span class="first" id="120">F9</span></div>
+        <div class="f10 anjian lan_1"><span class="first" id="121">F10</span></div>
+        <div class="f11 anjian lan_1"><span class="first" id="122">F11</span></div>
+        <div class="f12 anjian lan_1"><span class="first" id="123">F12</span></div>
+        <div class="prt anjian lan_1"><span class="first">PrtSc SysRq</span></div>
+        <div class="scroll anjian lan_1"><span class="first" id="145">Scroll Lock</span></div>
+        <div class="pause anjian lan_1"><span class="first" id="19">Pause Break</span></div>
+
+        <div class="a_1 anjian lan_2"><span class="first">~</span><span class="fourth" id="192">`</span></div>
+        <div class="a_2 anjian lan_2"><span class="first">!</span><span class="fourth" id="49">1</span></div>
+        <div class="a_3 anjian lan_2"><span class="first">@</span><span class="fourth" id="50">2</span></div>
+        <div class="a_4 anjian lan_2"><span class="first">#</span><span class="fourth" id="51">3</span></div>
+        <div class="a_5 anjian lan_2"><span class="first">$</span><span class="fourth" id="52">4</span></div>
+        <div class="a_6 anjian lan_2"><span class="first">%</span><span class="fourth" id="53">5</span></div>
+        <div class="a_7 anjian lan_2"><span class="first">^</span><span class="fourth" id="54">6</span></div>
+        <div class="a_8 anjian lan_2"><span class="first">& </span><span class="fourth" id="55">7</span></div>
+        <div class="a_9 anjian lan_2"><span class="first">*</span><span class="fourth" id="56">8</span></div>
+        <div class="a_10 anjian lan_2"><span class="first">(</span><span class="fourth" id="57">9</span></div>
+        <div class="a_11 anjian lan_2"><span class="first">)</span><span class="fourth" id="48">0</span></div>
+        <div class="a_12 anjian lan_2"><span class="first">-</span><span class="fourth" id="173">-</span></div>
+        <div class="a_13 anjian lan_2"><span class="first">+</span><span class="fourth" id="61">=</span></div>
+        <div class="a_14 anjian lan_2"><span class="first" id="8">退格Backspace</span></div>
+        <div class="insert anjian lan_2"><span class="second" id="45">Insert</span></div>
+        <div class="home anjian lan_2"><span class="second" id="36">Home</span></div>
+        <div class="page_up anjian lan_2"><span class="third" id="33">Page Up</span></div>
+        <div class="num_lock anjian lan_2"><span class="third" id="144">Num Lock</span></div>
+        <div class="a_15 anjian lan_2"><span class="third" id="111">/</span></div>
+        <div class="a_16 anjian lan_2"><span class="third" id="106">*</span></div>
+        <div class="a_17 anjian lan_2"><span class="third" id="109">-</span></div>
+
+        <div class="tap anjian lan_3"><span class="first" id="9">Tap</span></div>
+        <div class="q anjian lan_3"><span class="first" id="81">Q</span></div>
+        <div class="w anjian lan_3"><span class="first" id="87">W</span></div>
+        <div class="e anjian lan_3"><span class="first" id="69">E</span></div>
+        <div class="r anjian lan_3"><span class="first" id="82">R</span></div>
+        <div class="t anjian lan_3"><span class="first" id="84">T</span></div>
+        <div class="y anjian lan_3"><span class="first" id="89">Y</span></div>
+        <div class="u anjian lan_3"><span class="first" id="85">U</span></div>
+        <div class="i anjian lan_3"><span class="first" id="73">I</span></div>
+        <div class="o anjian lan_3"><span class="first" id="79">O</span></div>
+        <div class="p anjian lan_3"><span class="first" id="80">P</span></div>
+        <div class="p1 anjian lan_3"><span class="first" id="219">{</span></div>
+        <div class="p2 anjian lan_3"><span class="first" id="221">}</span></div>
+        <div class="p3 anjian lan_3"><span class="first">|</span><span class="fourth" id="220">\</span></div>
+        <div class="delete anjian lan_3"><span class="second" id="46">Delete</span></div>
+        <div class="end anjian lan_3"><span class="second" id="35">End</span></div>
+        <div class="page_down anjian lan_3"><span class="third" id="34">Page Down</span></div>
+        <div class="seven anjian lan_3"><span class="third" id="103">7</span><span class="fourth" id="49">Home</span></div>
+        <div class="eight anjian lan_3"><span class="third" id="104">8</span><span class="fourth" id="49">向上</span></div>
+        <div class="nine anjian lan_3"><span class="third" id="105">9</span><span class="fourth" id="49">PgUp</span></div>
+        <div class="add anjian lan_3"><span class="fifth" id="107">+</span></div>
+
+        <div class="caps anjian lan_4"><span class="first" id="20">Caps Lock</span></div>
+        <div class="a anjian lan_4"><span class="first" id="65">A</span></div>
+        <div class="s anjian lan_4"><span class="first" id="83">S</span></div>
+        <div class="d anjian lan_4"><span class="first" id="68">D</span></div>
+        <div class="f anjian lan_4"><span class="first" id="70">F</span></div>
+        <div class="g anjian lan_4"><span class="first" id="71">G</span></div>
+        <div class="h anjian lan_4"><span class="first" id="72">H</span></div>
+        <div class="j anjian lan_4"><span class="first" id="74">J</span></div>
+        <div class="k anjian lan_4"><span class="first" id="75">K</span></div>
+        <div class="l anjian lan_4"><span class="first" id="76">L</span></div>
+        <div class="b_1 anjian lan_4"><span class="first" id="59">:</span></div>
+        <div class="b_2 anjian lan_4"><span class="first" id="222">"</span></div>
+        <div class="b_3 anjian lan_4"><span class="first" id="13">Enter</span></div>
+        <div class="four anjian lan_4"><span class="third" id="100">4</span><span class="fourth">向左</span></div>
+        <div class="five anjian lan_4"><span class="third" id="101">5</span></div>
+        <div class="six anjian lan_4"><span class="third" id="102">6</span><span class="fourth">向右</span></div>
+
+        <div class="shift anjian lan_5"><span class="first" id="16">Shift</span></div>
+        <div class="z anjian lan_5"><span class="first" id="90">Z</span></div>
+        <div class="x anjian lan_5"><span class="first" id="88">X</span></div>
+        <div class="c anjian lan_5"><span class="first" id="67">C</span></div>
+        <div class="v anjian lan_5"><span class="first" id="86">V</span></div>
+        <div class="b anjian lan_5"><span class="first" id="66">B</span></div>
+        <div class="n anjian lan_5"><span class="first" id="78">N</span></div>
+        <div class="m anjian lan_5"><span class="first" id="77">M</span></div>
+        <div class="m_1 anjian lan_5"><span class="first" id="188"><</span></div>
+        <div class="m_2 anjian lan_5"><span class="first" id="190">></span></div>
+        <div class="m_3 anjian lan_5"><span class="first" id="191">?</span></div>
+        <div class="m_4 anjian lan_5"><span class="first" id="16">Shift</span></div>
+        <div class="l_up anjian lan_5"><span class="second" id="38">↑</span></div>
+        <div class="one anjian lan_5"><span class="third" id="97">1</span><span class="fourth">End</span></div>
+        <div class="two anjian lan_5"><span class="third" id="98">2</span><span class="fourth">向下</span></div>
+        <div class="three anjian lan_5"><span class="third" id="99">3</span><span class="fourth">PgDn</span></div>
+        <div class="s_enter anjian lan_5"><span class="fifth" id="13">Enter</span></div>
+
+        <div class="ctrl anjian lan_6"><span class="first" id="17">Ctrl</span></div>
+        <div class="windows anjian lan_6"><span class="first" id="91">Win</span></div>
+        <div class="alt anjian lan_6"><span class="first" id="18">Alt</span></div>
+        <div class="space anjian lan_6"><span class="first" id="32"></span></div>
+        <div class="alt_1 anjian lan_6"><span class="first" id="18">Alt</span></div>
+        <div class="windows_1 anjian lan_6"><span class="first" id="91">Win</span></div>
+        <div class="right_on anjian lan_6"><span class="first" id="93"></span></div>
+        <div class="ctrl_1 anjian lan_6"><span class="first" id="17">Ctrl</span></div>
+        <div class="l_left anjian lan_6"><span class="second" id="37">←</span></div>
+        <div class="l_down anjian lan_6"><span class="second" id="40">↓</span></div>
+        <div class="l_right anjian lan_6"><span class="second" id="39">→</span></div>
+        <div class="zone anjian lan_6"><span class="third" id="96">0</span><span class="fourth" id="45">Ins</span></div>
+        <div class="del anjian lan_6"><span class="third" id="110">.</span><span class="fourth" id="46">Del</span></div>
+    </div>
+</body>
+</html> 
